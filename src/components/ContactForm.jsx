@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { IconMapPin, IconPhone, IconMail, IconSend } from '@tabler/icons-react'
 
 export default function ContactForm() {
-  const [form, setForm] = useState({ name: '', company: '', message: '' })
+  const [form, setForm] = useState({ name: '', company: '', phone: '', email: '', message: '' })
   const [errors, setErrors] = useState({})
   const [sent, setSent] = useState(false)
   const [sending, setSending] = useState(false)
@@ -11,6 +11,9 @@ export default function ContactForm() {
   const validate = () => {
     const e = {}
     if (!form.name.trim()) e.name = 'Ad gerekli'
+    if (!form.phone.trim()) e.phone = 'Telefon numarası gerekli'
+    if (!form.email.trim()) e.email = 'E-posta gerekli'
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) e.email = 'Geçerli bir e-posta girin'
     if (!form.message.trim()) e.message = 'Mesaj gerekli'
     return e
   }
@@ -33,12 +36,14 @@ export default function ContactForm() {
           _subject: 'Akdumann — Yeni İletişim Formu Mesajı',
           'Ad Soyad': form.name,
           Şirket: form.company || '-',
+          Telefon: form.phone,
+          'E-posta': form.email,
           Mesaj: form.message,
         }),
       })
       if (!res.ok) throw new Error('Gönderim başarısız')
       setSent(true)
-      setForm({ name: '', company: '', message: '' })
+      setForm({ name: '', company: '', phone: '', email: '', message: '' })
       setTimeout(() => setSent(false), 5000)
     } catch {
       setSendError(true)
@@ -231,6 +236,62 @@ export default function ContactForm() {
                     onFocus={(e) => (e.target.style.borderColor = 'var(--blue)')}
                     onBlur={(e) => (e.target.style.borderColor = 'var(--border)')}
                   />
+                </div>
+
+                <div>
+                  <label
+                    style={{
+                      display: 'block',
+                      fontSize: 13,
+                      fontWeight: 500,
+                      color: 'var(--text)',
+                      marginBottom: 6,
+                    }}
+                  >
+                    Telefon *
+                  </label>
+                  <input
+                    type="tel"
+                    value={form.phone}
+                    onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                    placeholder="+90 5XX XXX XX XX"
+                    style={inputStyle(errors.phone)}
+                    onFocus={(e) => (e.target.style.borderColor = 'var(--blue)')}
+                    onBlur={(e) =>
+                      (e.target.style.borderColor = errors.phone ? '#e53e3e' : 'var(--border)')
+                    }
+                  />
+                  {errors.phone && (
+                    <p style={{ fontSize: 12, color: '#e53e3e', marginTop: 4 }}>{errors.phone}</p>
+                  )}
+                </div>
+
+                <div>
+                  <label
+                    style={{
+                      display: 'block',
+                      fontSize: 13,
+                      fontWeight: 500,
+                      color: 'var(--text)',
+                      marginBottom: 6,
+                    }}
+                  >
+                    E-posta *
+                  </label>
+                  <input
+                    type="email"
+                    value={form.email}
+                    onChange={(e) => setForm({ ...form, email: e.target.value })}
+                    placeholder="ornek@firma.com"
+                    style={inputStyle(errors.email)}
+                    onFocus={(e) => (e.target.style.borderColor = 'var(--blue)')}
+                    onBlur={(e) =>
+                      (e.target.style.borderColor = errors.email ? '#e53e3e' : 'var(--border)')
+                    }
+                  />
+                  {errors.email && (
+                    <p style={{ fontSize: 12, color: '#e53e3e', marginTop: 4 }}>{errors.email}</p>
+                  )}
                 </div>
 
                 <div>
