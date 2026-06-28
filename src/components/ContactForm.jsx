@@ -12,6 +12,7 @@ export default function ContactForm() {
     const e = {}
     if (!form.name.trim()) e.name = 'Ad gerekli'
     if (!form.phone.trim()) e.phone = 'Telefon numarası gerekli'
+    else if (form.phone.replace(/\D/g, '').length < 10) e.phone = 'Geçerli bir telefon numarası girin'
     if (!form.email.trim()) e.email = 'E-posta gerekli'
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) e.email = 'Geçerli bir e-posta girin'
     if (!form.message.trim()) e.message = 'Mesaj gerekli'
