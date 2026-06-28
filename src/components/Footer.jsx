@@ -30,7 +30,7 @@ export default function Footer() {
       title: 'İletişim',
       links: [
         { label: '+90 543 850 77 61', href: 'tel:+905438507761' },
-        { label: 'info@akdumann.com', href: 'mailto:info@akdumann.com' },
+        { label: 'akdumanglobal@gmail.com', href: 'mailto:akdumanglobal@gmail.com' },
         { label: 'İstanbul, Türkiye', action: handleContact },
       ],
     },

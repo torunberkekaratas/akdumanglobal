@@ -5,6 +5,8 @@ export default function ContactForm() {
   const [form, setForm] = useState({ name: '', company: '', message: '' })
   const [errors, setErrors] = useState({})
   const [sent, setSent] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [sendError, setSendError] = useState(false)
 
   const validate = () => {
     const e = {}
@@ -13,7 +15,7 @@ export default function ContactForm() {
     return e
   }
 
-  const handleSubmit = (ev) => {
+  const handleSubmit = async (ev) => {
     ev.preventDefault()
     const e = validate()
     if (Object.keys(e).length) {
@@ -21,9 +23,28 @@ export default function ContactForm() {
       return
     }
     setErrors({})
-    setSent(true)
-    setForm({ name: '', company: '', message: '' })
-    setTimeout(() => setSent(false), 4000)
+    setSendError(false)
+    setSending(true)
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/akdumanglobal@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          _subject: 'Akdumann — Yeni İletişim Formu Mesajı',
+          'Ad Soyad': form.name,
+          Şirket: form.company || '-',
+          Mesaj: form.message,
+        }),
+      })
+      if (!res.ok) throw new Error('Gönderim başarısız')
+      setSent(true)
+      setForm({ name: '', company: '', message: '' })
+      setTimeout(() => setSent(false), 5000)
+    } catch {
+      setSendError(true)
+    } finally {
+      setSending(false)
+    }
   }
 
   const inputStyle = (hasError) => ({
@@ -103,7 +124,7 @@ export default function ContactForm() {
             {[
               { Icon: IconMapPin, text: 'İstanbul, Türkiye' },
               { Icon: IconPhone, text: '+90 543 850 77 61', href: 'tel:+905438507761' },
-              { Icon: IconMail, text: 'info@akdumann.com', href: 'mailto:info@akdumann.com' },
+              { Icon: IconMail, text: 'akdumanglobal@gmail.com', href: 'mailto:akdumanglobal@gmail.com' },
             ].map(({ Icon, text, href }) => {
               const Wrapper = href ? 'a' : 'div'
               return (
@@ -246,8 +267,15 @@ export default function ContactForm() {
                   )}
                 </div>
 
+                {sendError && (
+                  <p style={{ fontSize: 12.5, color: '#e53e3e', margin: 0 }}>
+                    Mesajınız gönderilemedi. Lütfen tekrar deneyin veya bizi doğrudan arayın.
+                  </p>
+                )}
+
                 <button
                   type="submit"
+                  disabled={sending}
                   style={{
                     width: '100%',
                     padding: '13px 24px',
@@ -257,7 +285,8 @@ export default function ContactForm() {
                     borderRadius: 8,
                     fontSize: 14,
                     fontWeight: 600,
-                    cursor: 'pointer',
+                    cursor: sending ? 'not-allowed' : 'pointer',
+                    opacity: sending ? 0.7 : 1,
                     fontFamily: 'inherit',
                     display: 'flex',
                     alignItems: 'center',
@@ -265,11 +294,11 @@ export default function ContactForm() {
                     gap: 8,
                     transition: 'opacity 0.2s',
                   }}
-                  onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.88')}
-                  onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
+                  onMouseEnter={(e) => { if (!sending) e.currentTarget.style.opacity = '0.88' }}
+                  onMouseLeave={(e) => { if (!sending) e.currentTarget.style.opacity = '1' }}
                 >
                   <IconSend size={16} />
-                  Gönder
+                  {sending ? 'Gönderiliyor...' : 'Gönder'}
                 </button>
               </div>
             </form>
