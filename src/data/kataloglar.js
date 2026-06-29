@@ -54,6 +54,13 @@ export const kataloglar = [
     desc: 'Peynir & kahvaltılık, bakliyat, şarküteri, baharat, zeytin & zeytinyağı ürün grupları ile referans listesini içeren genel gıda tedarik kataloğu.',
     file: '/katalog/renpey-gida-sunumu.pdf',
   },
+  {
+    id: 8,
+    title: 'Renpey Ürün Tanıtım Kataloğu',
+    sector: 'gida',
+    desc: 'Peynir & kahvaltılık, zeytin & zeytinyağı, şarküteri, bakliyat, baharat ve konserve gruplarında marka ve ürün görselleriyle detaylı katalog.',
+    file: '/katalog/renpey-urun-tanitim-katalogu.pdf',
+  },
 ]
 
 export const sektorler = [
