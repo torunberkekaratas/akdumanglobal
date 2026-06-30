@@ -356,14 +356,15 @@ export default function Gida() {
 
         {/* Back Link */}
         <motion.button
+          className="hero-back"
           initial={{ opacity: 0, x: -12 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.6, duration: 0.35 }}
           onClick={() => navigate('/')}
           style={{
             position: 'absolute',
-            bottom: 32,
-            left: 40,
+            top: 96,
+            left: 48,
             background: 'none',
             border: 'none',
             color: 'rgba(255,255,255,0.6)',
@@ -386,6 +387,7 @@ export default function Gida() {
 
         {/* Hero Content */}
         <motion.div
+          className="hero-text"
           initial="hidden"
           animate="show"
           variants={{ show: { transition: { staggerChildren: 0.15 } } }}
@@ -883,6 +885,10 @@ export default function Gida() {
           .why-grid {
             grid-template-columns: 1fr !important;
           }
+        }
+        @media (max-width: 768px) {
+          .hero-back { top: 100px !important; left: 24px !important; font-size: 12px !important; }
+          .hero-text { padding-top: 150px !important; padding-left: 24px !important; padding-right: 24px !important; }
         }
       `}</style>
     </>

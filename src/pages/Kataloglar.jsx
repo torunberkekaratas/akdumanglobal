@@ -126,17 +126,18 @@ export default function Kataloglar() {
         />
         <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at 80% 20%, rgba(24,95,165,0.22) 0%, transparent 60%)' }} />
 
-        <div style={{ position: 'relative', zIndex: 1, maxWidth: 1200, margin: '0 auto' }}>
-          <motion.button
-            initial={{ opacity: 0, x: -12 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3 }}
-            onClick={() => navigate('/')}
-            style={{ background: 'none', border: 'none', color: 'rgba(255,255,255,0.55)', cursor: 'pointer', fontSize: 12.5, fontFamily: 'inherit', display: 'flex', alignItems: 'center', gap: 7, padding: 0, marginBottom: 32, transition: 'color 0.2s' }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
-            onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.55)')}
-          >
-            <IconArrowLeft size={14} /> Ana Sayfaya Dön
-          </motion.button>
+        <motion.button
+          className="hero-back"
+          initial={{ opacity: 0, x: -12 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3 }}
+          onClick={() => navigate('/')}
+          style={{ position: 'absolute', top: 96, left: 48, background: 'none', border: 'none', color: 'rgba(255,255,255,0.6)', cursor: 'pointer', fontSize: 13, fontFamily: 'inherit', display: 'flex', alignItems: 'center', gap: 6, zIndex: 2, padding: 0, transition: 'color 0.2s' }}
+          onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
+          onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.6)')}
+        >
+          <IconArrowLeft size={15} /> Ana Sayfaya Dön
+        </motion.button>
 
+        <div style={{ position: 'relative', zIndex: 1, maxWidth: 1200, margin: '0 auto' }}>
           <motion.div initial="hidden" animate="show" variants={stagger} style={{ paddingBottom: 64 }}>
             <motion.div variants={fadeUp} style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 24, background: 'rgba(24,95,165,0.25)', backdropFilter: 'blur(10px)', border: '1px solid rgba(74,158,255,0.45)', borderRadius: 100, padding: '6px 18px 6px 10px' }}>
               <div style={{ width: 7, height: 7, borderRadius: '50%', background: '#4a9eff', boxShadow: '0 0 8px #4a9eff' }} />
@@ -295,6 +296,9 @@ export default function Kataloglar() {
         }
         @media (max-width: 700px) {
           .katalog-grid { grid-template-columns: 1fr !important; }
+        }
+        @media (max-width: 768px) {
+          .hero-back { top: 100px !important; left: 24px !important; font-size: 12px !important; }
         }
       `}</style>
     </>

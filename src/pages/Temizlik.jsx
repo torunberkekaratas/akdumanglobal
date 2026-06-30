@@ -316,9 +316,9 @@ export default function Temizlik() {
           className="hero-back"
           initial={{ opacity: 0, x: -12 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.7 }}
           onClick={() => navigate('/')}
-          style={{ position: 'absolute', top: 96, left: 48, background: 'none', border: 'none', color: 'rgba(255,255,255,0.65)', cursor: 'pointer', fontSize: 13, fontFamily: 'inherit', display: 'flex', alignItems: 'center', gap: 6, zIndex: 2, padding: 0, transition: 'color 0.2s' }}
+          style={{ position: 'absolute', top: 96, left: 48, background: 'none', border: 'none', color: 'rgba(255,255,255,0.6)', cursor: 'pointer', fontSize: 13, fontFamily: 'inherit', display: 'flex', alignItems: 'center', gap: 6, zIndex: 2, padding: 0, transition: 'color 0.2s' }}
           onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
-          onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.65)')}
+          onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.6)')}
         >
           <IconArrowLeft size={15} /> Ana Sayfaya Dön
         </motion.button>

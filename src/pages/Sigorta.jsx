@@ -200,11 +200,11 @@ export default function Sigorta() {
           className="hero-back"
           initial={{ opacity: 0, x: -14 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.7, ease: 'easeOut' }}
           onClick={() => navigate('/')}
-          style={{ position: 'absolute', top: 96, left: 52, background: 'none', border: 'none', color: 'rgba(255,255,255,0.55)', cursor: 'pointer', fontSize: 12.5, fontFamily: 'inherit', display: 'flex', alignItems: 'center', gap: 7, zIndex: 2, padding: 0, transition: 'color 0.2s' }}
+          style={{ position: 'absolute', top: 96, left: 48, background: 'none', border: 'none', color: 'rgba(255,255,255,0.6)', cursor: 'pointer', fontSize: 13, fontFamily: 'inherit', display: 'flex', alignItems: 'center', gap: 6, zIndex: 2, padding: 0, transition: 'color 0.2s' }}
           onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
-          onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.55)')}
+          onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.6)')}
         >
-          <IconArrowLeft size={14} /> Ana Sayfaya Dön
+          <IconArrowLeft size={15} /> Ana Sayfaya Dön
         </motion.button>
 
         {/* hero text */}
