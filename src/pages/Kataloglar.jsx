@@ -112,6 +112,7 @@ export default function Kataloglar() {
       <Helmet>
         <title>Kataloglar — Akdumann</title>
         <meta name="description" content="Akdumann gemi & tersane sigortaları, gıda & bakliyat ve endüstriyel temizlik & sarf ürün kataloglarını PDF olarak indirin." />
+        <link rel="canonical" href="https://akdumanglobal.vercel.app/kataloglar" />
       </Helmet>
 
       <Navbar />

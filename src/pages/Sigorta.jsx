@@ -182,6 +182,7 @@ export default function Sigorta() {
       <Helmet>
         <title>Gemi & Tersane Sigortaları — Akdumann</title>
         <meta name="description" content="Tekne sigortası, P&I, tersane sorumluluk, inşaat tüm riskler ve daha fazlası. Denizcilik sektörüne özel kapsamlı sigorta çözümleri." />
+        <link rel="canonical" href="https://akdumanglobal.vercel.app/sigorta" />
       </Helmet>
 
       <Navbar />

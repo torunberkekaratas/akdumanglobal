@@ -39,6 +39,7 @@ export default function UrunDetay() {
       <Helmet>
         <title>{product.label} — Akdumann</title>
         <meta name="description" content={product.detay} />
+        <link rel="canonical" href={`https://akdumanglobal.vercel.app/urun/${sector}/${slug}`} />
       </Helmet>
 
       <Navbar />
