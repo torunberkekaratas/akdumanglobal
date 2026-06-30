@@ -110,8 +110,8 @@ export default function Kataloglar() {
   return (
     <>
       <Helmet>
-        <title>Kataloglar — Akdumann</title>
-        <meta name="description" content="Akdumann gemi & tersane sigortaları, gıda & bakliyat ve endüstriyel temizlik & sarf ürün kataloglarını PDF olarak indirin." />
+        <title>Kataloglar — Akduman Global</title>
+        <meta name="description" content="Akduman Global gemi & tersane sigortaları, gıda & bakliyat ve endüstriyel temizlik & sarf ürün kataloglarını PDF olarak indirin." />
         <link rel="canonical" href="https://www.akdumanglobal.com/kataloglar" />
       </Helmet>
 
@@ -142,7 +142,7 @@ export default function Kataloglar() {
           <motion.div initial="hidden" animate="show" variants={stagger} style={{ paddingBottom: 64 }}>
             <motion.div variants={fadeUp} style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 24, background: 'rgba(24,95,165,0.25)', backdropFilter: 'blur(10px)', border: '1px solid rgba(74,158,255,0.45)', borderRadius: 100, padding: '6px 18px 6px 10px' }}>
               <div style={{ width: 7, height: 7, borderRadius: '50%', background: '#4a9eff', boxShadow: '0 0 8px #4a9eff' }} />
-              <span style={{ fontSize: 10.5, fontWeight: 800, letterSpacing: '2.5px', color: '#4a9eff', textTransform: 'uppercase' }}>Akdumann Kataloglar</span>
+              <span style={{ fontSize: 10.5, fontWeight: 800, letterSpacing: '2.5px', color: '#4a9eff', textTransform: 'uppercase' }}>Akduman Global Kataloglar</span>
             </motion.div>
             <motion.h1 variants={fadeUp} style={{ fontSize: 'clamp(34px,5vw,58px)', fontWeight: 900, color: '#fff', letterSpacing: '-1.5px', lineHeight: 1.06, marginBottom: 20, maxWidth: 720 }}>
               Tüm ürün ve hizmet<br />kataloglarımız

@@ -295,7 +295,7 @@ export default function Temizlik() {
   return (
     <>
       <Helmet>
-        <title>Endüstriyel Temizlik & Sarf Tedariki — Akdumann</title>
+        <title>Endüstriyel Temizlik & Sarf Tedariki — Akduman Global</title>
         <meta name="description" content="Otel, hastane, restoran ve fabrikalar için sarf malzemeleri, endüstriyel kimyasallar ve oto/halı bakım ürünleri tedariki. WUNSCHOME, WIEBERR, Acar Tedarik." />
         <link rel="canonical" href="https://www.akdumanglobal.com/temizlik" />
       </Helmet>

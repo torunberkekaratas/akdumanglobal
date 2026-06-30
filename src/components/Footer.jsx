@@ -156,7 +156,7 @@ export default function Footer() {
           className="footer-copy"
         >
           <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.3)' }}>
-            © {year} Akdumann. Tüm hakları saklıdır.
+            © {year} Akduman Global. Tüm hakları saklıdır.
           </p>
           <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.2)' }}>
             Denizcilik · Gıda · Endüstri

@@ -37,7 +37,7 @@ export default function UrunDetay() {
   return (
     <>
       <Helmet>
-        <title>{product.label} — Akdumann</title>
+        <title>{product.label} — Akduman Global</title>
         <meta name="description" content={product.detay} />
         <link rel="canonical" href={`https://www.akdumanglobal.com/urun/${sector}/${slug}`} />
       </Helmet>
@@ -304,7 +304,7 @@ export default function UrunDetay() {
             style={{ height: 3, width: 52, background: `linear-gradient(90deg, ${product.accent}, ${product.color})`, borderRadius: 2, marginBottom: 28 }}
           />
           <motion.h3 variants={fadeUp} style={{ fontSize: 26, fontWeight: 800, color: 'var(--dark)', marginBottom: 14, letterSpacing: '-0.4px', lineHeight: 1.18 }}>
-            Neden Akdumann?
+            Neden Akduman Global?
           </motion.h3>
           <motion.p variants={fadeUp} style={{ fontSize: 15, color: 'var(--muted)', lineHeight: 1.88, marginBottom: 32 }}>
             {product.detay}

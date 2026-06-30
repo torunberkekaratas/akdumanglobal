@@ -34,7 +34,7 @@ export default function ContactForm() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
-          _subject: 'Akdumann — Yeni İletişim Formu Mesajı',
+          _subject: 'Akduman Global — Yeni İletişim Formu Mesajı',
           'Ad Soyad': form.name,
           Şirket: form.company || '-',
           Telefon: form.phone,

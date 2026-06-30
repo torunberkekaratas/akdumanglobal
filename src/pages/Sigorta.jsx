@@ -148,6 +148,10 @@ const tersaneKartlari = [
   { icon: IconDeviceDesktop, title: 'Elektronik Cihaz', items: ['Bilgisayarlar, kontrol sistemleri ve elektronik ekipmanlar'] },
   { icon: IconLeaf, title: 'Çevre Kirliliği Sorumluluk', items: ['Yakıt, yağ veya kimyasal sızıntılardan doğan sorumluluklar'] },
   { icon: IconShieldLock, title: 'Siber Risk Sigortası', items: ['Dijital sistemlere yönelik siber saldırı risklerini kapsar'] },
+  { icon: IconTruck, title: 'Nakliye & Malzeme Sigortası', items: ['İnşaat malzeme ve ekipmanının taşınma riskleri', 'Liman içi nakliyede doğabilecek hasar ve kayıplar'] },
+  { icon: IconCalendarOff, title: 'İş Durması Sigortası', items: ['Yangın, hasar veya kaza sonrası operasyonel duraklamada gelir kaybı', 'Tersane üretiminin yeniden başlamasına kadar teminat'] },
+  { icon: IconPackage, title: 'Stok & Emtia Sigortası', items: ['Depolanan sac, çelik ve inşaat malzemeleri', 'Yangın, hırsızlık ve doğal afet teminatı'] },
+  { icon: IconShieldCheck, title: 'Mesleki Sorumluluk Sigortası', items: ['Naval mimar ve mühendislerin tasarım hatalarına karşı', 'Proje yönetimi ve teknik danışmanlık hataları'] },
 ]
 
 const ekSigortalar = [
@@ -180,7 +184,7 @@ export default function Sigorta() {
   return (
     <>
       <Helmet>
-        <title>Gemi & Tersane Sigortaları — Akdumann</title>
+        <title>Gemi & Tersane Sigortaları — Akduman Global</title>
         <meta name="description" content="Tekne sigortası, P&I, tersane sorumluluk, inşaat tüm riskler ve daha fazlası. Denizcilik sektörüne özel kapsamlı sigorta çözümleri." />
         <link rel="canonical" href="https://www.akdumanglobal.com/sigorta" />
       </Helmet>
@@ -301,7 +305,7 @@ export default function Sigorta() {
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true, margin: '-60px' }} variants={stagger}>
             <motion.div variants={fadeUp} style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 18 }}>
               <div style={{ width: 32, height: 2.5, background: '#185FA5', borderRadius: 2 }} />
-              <span style={{ fontSize: 10, fontWeight: 800, letterSpacing: '4px', color: '#185FA5', textTransform: 'uppercase' }}>Neden Akdumann</span>
+              <span style={{ fontSize: 10, fontWeight: 800, letterSpacing: '4px', color: '#185FA5', textTransform: 'uppercase' }}>Neden Akduman Global</span>
             </motion.div>
             <motion.h2 variants={fadeUp} style={{ fontSize: 'clamp(26px,3vw,38px)', fontWeight: 900, color: 'var(--dark)', lineHeight: 1.15, marginBottom: 18, letterSpacing: '-0.6px' }}>
               Denizcilik sigortasında<br />tek adres

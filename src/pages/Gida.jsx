@@ -311,7 +311,7 @@ export default function Gida() {
   return (
     <>
       <Helmet>
-        <title>Gıda & Bakliyat Tedariki — Akdumann</title>
+        <title>Gıda & Bakliyat Tedariki — Akduman Global</title>
         <meta
           name="description"
           content="Restoran, otel ve catering işletmelerine bakliyat, peynir, zeytin, şarküteri ve baharat toplu tedariki. Düzenli teslimat, geniş ürün yelpazesi."
@@ -720,7 +720,7 @@ export default function Gida() {
                 letterSpacing: '-0.3px',
               }}
             >
-              Bize güvenen işletmeler
+              Bizimle çalışmayı tercih eden şirketler
             </motion.h2>
             <motion.p
               variants={fadeUp}

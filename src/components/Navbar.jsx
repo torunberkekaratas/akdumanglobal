@@ -67,7 +67,7 @@ export default function Navbar() {
           display: 'flex',
           alignItems: 'center',
         }}
-        aria-label="Akdumann Ana Sayfa"
+        aria-label="Akduman Global Ana Sayfa"
       >
         <Logo height={52} />
       </button>

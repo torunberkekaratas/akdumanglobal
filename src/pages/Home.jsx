@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>Akdumann — Kurumsal Tedarik & Sigorta Çözümleri</title>
+        <title>Akduman Global — Kurumsal Tedarik & Sigorta Çözümleri</title>
         <meta
           name="description"
           content="Gemi & tersane sigortası, gıda & bakliyat tedariki ve endüstriyel temizlik alanlarında kurumsal çözümler."

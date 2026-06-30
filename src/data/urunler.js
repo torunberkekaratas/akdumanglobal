@@ -440,7 +440,7 @@ export const urunler = {
         'https://images.unsplash.com/photo-1590335701360-14730f1cbe91?w=800&q=80',
       ],
       desc: 'Tersane, fabrika ve endüstriyel tesisler için inşaat tüm risklerden siber riske kapsamlı teminat.',
-      detay: 'Tersane işletmeleri ve büyük endüstriyel tesisler için yapı, ekipman ve sorumluluk risklerini tek çatı altında yönetiyoruz. Shipbuilders Risk\'ten makine kırılmasına, çevre kirliliği sorumluluğundan siber riske 10 farklı poliçe türüyle tam koruma sağlıyoruz.',
+      detay: 'Tersane işletmeleri ve büyük endüstriyel tesisler için yapı, ekipman ve sorumluluk risklerini tek çatı altında yönetiyoruz. Shipbuilders Risk\'ten iş durması sigortasına, nakliyeden stok güvencesine ve mesleki sorumluluktan siber riske 14 farklı poliçe türüyle tam koruma sağlıyoruz.',
       urunler: [
         'Tersane Sorumluluk Sigortası — 3. şahıs zararları',
         'İşveren Mali Mesuliyet — iş kazaları, çalışan zararları',
@@ -452,6 +452,10 @@ export const urunler = {
         'Elektronik Cihaz Sigortası — bilgisayar, kontrol sistemleri',
         'Çevre Kirliliği Sorumluluk — yakıt/kimyasal sızıntısı',
         'Siber Risk Sigortası — dijital saldırı ve veri ihlalleri',
+        'Nakliye & Malzeme Sigortası — liman içi malzeme taşıma riskleri',
+        'İş Durması Sigortası — hasar sonrası operasyonel gelir kaybı',
+        'Stok & Emtia Sigortası — sac, çelik ve inşaat malzemeleri',
+        'Mesleki Sorumluluk Sigortası — mühendis ve naval mimar hataları',
       ],
       tags: ['Endüstriyel', 'CAR / EAR', 'Siber Risk', 'Tam Kapsam'],
       ozellikler: [

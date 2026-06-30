@@ -13,7 +13,7 @@ export default function Logo({ height = 40, variant = 'dark', onClick }) {
       height={height}
       style={{ display: 'block', cursor: onClick ? 'pointer' : 'default' }}
       onClick={onClick}
-      aria-label="Akdumann Logo"
+      aria-label="Akduman Global Logo"
     >
       {/* ── Amblem (kırmızı swirl + lacivert A harfi) ── */}
       <g>

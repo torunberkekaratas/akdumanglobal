@@ -52,7 +52,7 @@ export default function SectorPage({ sector }) {
   return (
     <>
       <Helmet>
-        <title>{sector.title} — Akdumann</title>
+        <title>{sector.title} — Akduman Global</title>
         <meta name="description" content={sector.desc} />
         <html lang="tr" />
       </Helmet>
