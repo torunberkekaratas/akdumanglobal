@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://akdumanglobal.vercel.app/sitemap.xml
+Sitemap: https://akdumanglobal.com/sitemap.xml

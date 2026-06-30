@@ -14,7 +14,7 @@ export default function Home() {
           name="description"
           content="Gemi & tersane sigortası, gıda & bakliyat tedariki ve endüstriyel temizlik alanlarında kurumsal çözümler."
         />
-        <link rel="canonical" href="https://akdumanglobal.vercel.app/" />
+        <link rel="canonical" href="https://akdumanglobal.com/" />
         <html lang="tr" />
       </Helmet>
 

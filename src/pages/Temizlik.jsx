@@ -297,7 +297,7 @@ export default function Temizlik() {
       <Helmet>
         <title>Endüstriyel Temizlik & Sarf Tedariki — Akdumann</title>
         <meta name="description" content="Otel, hastane, restoran ve fabrikalar için sarf malzemeleri, endüstriyel kimyasallar ve oto/halı bakım ürünleri tedariki. WUNSCHOME, WIEBERR, Acar Tedarik." />
-        <link rel="canonical" href="https://akdumanglobal.vercel.app/temizlik" />
+        <link rel="canonical" href="https://akdumanglobal.com/temizlik" />
       </Helmet>
 
       <Navbar />
