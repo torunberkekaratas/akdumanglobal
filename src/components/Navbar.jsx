@@ -37,6 +37,18 @@ export default function Navbar() {
     setMenuOpen(false)
   }
 
+  const handleAbout = () => {
+    if (location.pathname !== '/') {
+      navigate('/')
+      setTimeout(() => {
+        document.getElementById('hakkimizda')?.scrollIntoView({ behavior: 'smooth' })
+      }, 400)
+    } else {
+      document.getElementById('hakkimizda')?.scrollIntoView({ behavior: 'smooth' })
+    }
+    setMenuOpen(false)
+  }
+
   return (
     <nav
       style={{
@@ -81,10 +93,13 @@ export default function Navbar() {
         }}
         className="nav-desktop"
       >
-        {['Hakkımızda', 'Referanslar'].map((label) => (
+        {[
+          { label: 'Hakkımızda', action: handleAbout },
+          { label: 'Referanslar', action: handleContact },
+        ].map(({ label, action }) => (
           <button
             key={label}
-            onClick={() => handleContact()}
+            onClick={action}
             style={{
               background: 'none',
               border: 'none',
@@ -186,10 +201,13 @@ export default function Navbar() {
               zIndex: 49,
             }}
           >
-            {['Hakkımızda', 'Referanslar'].map((label) => (
+            {[
+              { label: 'Hakkımızda', action: handleAbout },
+              { label: 'Referanslar', action: handleContact },
+            ].map(({ label, action }) => (
               <button
                 key={label}
-                onClick={handleContact}
+                onClick={action}
                 style={{
                   background: 'none',
                   border: 'none',

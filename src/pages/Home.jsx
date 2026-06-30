@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async'
 import Navbar from '../components/Navbar'
 import HeroPanel from '../components/HeroPanel'
 import WhyUs from '../components/WhyUs'
+import AboutUs from '../components/AboutUs'
 import ContactForm from '../components/ContactForm'
 import Footer from '../components/Footer'
 
@@ -21,6 +22,7 @@ export default function Home() {
       <Navbar />
       <HeroPanel />
       <WhyUs />
+      <AboutUs />
       <ContactForm />
       <Footer />
     </>
