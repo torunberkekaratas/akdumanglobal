@@ -107,4 +107,5 @@ export default function App() {
       </Suspense>
     </AnimatePresence>
     </>
+  )
 }
