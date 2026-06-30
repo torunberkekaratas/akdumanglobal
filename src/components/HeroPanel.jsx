@@ -305,8 +305,7 @@ export default function HeroPanel() {
             margin: 0 !important;
           }
           .hero-floating-title {
-            top: 16% !important;
-            width: 86% !important;
+            display: none !important;
           }
           .panel-info {
             padding: 18px 20px !important;
