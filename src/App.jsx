@@ -1,6 +1,7 @@
 import { Suspense, lazy } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
+import WhatsAppButton from './components/WhatsAppButton'
 
 const Home = lazy(() => import('./pages/Home'))
 const Sigorta = lazy(() => import('./pages/Sigorta'))
@@ -33,7 +34,9 @@ export default function App() {
   const location = useLocation()
 
   return (
-    <AnimatePresence mode="wait">
+    <>
+      <WhatsAppButton />
+      <AnimatePresence mode="wait">
       <Suspense
         fallback={
           <div
@@ -103,5 +106,5 @@ export default function App() {
         </Routes>
       </Suspense>
     </AnimatePresence>
-  )
+    </>
 }
