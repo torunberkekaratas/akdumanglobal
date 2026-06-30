@@ -122,8 +122,9 @@ export default function ContactForm() {
               marginBottom: 40,
             }}
           >
-            Denizcilik sigortası, gıda tedariki veya endüstriyel temizlik
-            konularında uzman ekibimizle iletişime geçin.
+            Denizcilik sektörü sigortaları, sarf malzeme, tüm endüstriyel
+            temizlik ürünleri ve bilumum gıda tedarikleri konularında uzman
+            ekibimizle iletişime geçin.
           </p>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>

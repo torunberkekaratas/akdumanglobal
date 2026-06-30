@@ -3,7 +3,7 @@ import { useInView } from 'framer-motion'
 
 const metrics = [
   { value: 12, suffix: '+', label: 'Yıl Deneyim' },
-  { value: 500, suffix: '+', label: 'Mutlu Müşteri' },
+  { value: 576, suffix: '+', label: 'Mutlu Müşteri' },
   { value: 3, suffix: '', label: 'Hizmet Alanı' },
   { value: 24, suffix: '/7', label: 'Destek' },
 ]

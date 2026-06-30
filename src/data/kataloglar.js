@@ -61,6 +61,13 @@ export const kataloglar = [
     desc: 'Peynir & kahvaltılık, zeytin & zeytinyağı, şarküteri, bakliyat, baharat ve konserve gruplarında marka ve ürün görselleriyle detaylı katalog.',
     file: '/katalog/renpey-urun-tanitim-katalogu.pdf',
   },
+  {
+    id: 9,
+    title: 'ACR Temizlik Sarf Malzeme Kataloğu',
+    sector: 'temizlik',
+    desc: 'Kağıt grubu, çöp poşeti & kovası, mop/paspas/bez, temizlik aparatları ve plastik/metal krom dispenser & el kurutma cihazları kataloğu.',
+    file: '/katalog/acr-temizlik-urun-tanitim-katalogu.pdf',
+  },
 ]
 
 export const sektorler = [
