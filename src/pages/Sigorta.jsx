@@ -233,7 +233,7 @@ export default function Sigorta() {
             Gemi & Tersane<br />Sigortaları
           </motion.h1>
           <motion.p variants={fadeUp} style={{ fontSize: 17, color: 'rgba(255,255,255,0.68)', lineHeight: 1.75, maxWidth: 490, marginBottom: 44 }}>
-            Denizcilik sektörüne özel kapsamlı sigorta ürünleri ile varlıklarınızı ve sorumluluklarınızı güvence altına alıyoruz.
+            Tekne hasarından P&I sorumluluğuna, tersane inşaat riskinden iş durmasına — poliçenizi sektörü bilen ekiple yapılandırın.
           </motion.p>
           <motion.div variants={fadeUp} className="hero-cta-row" style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 80 }}>
             <button
@@ -360,7 +360,7 @@ export default function Sigorta() {
               <div style={{ height: 1, background: 'rgba(255,255,255,0.07)', marginBottom: 28 }} />
 
               <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.55)', lineHeight: 1.78, marginBottom: 28 }}>
-                Türkiye'nin önde gelen denizcilik sigorta danışmanlık firmalarından biri olarak, gemi sahiplerinden tersane işletmecilerine her ölçekte çözüm üretiyoruz.
+                Gemi sahipleri ve tersane işletmecileriyle 12 yıldır aynı masada otururuz. Her poliçenin arkasında sahadan gelen deneyim var.
               </p>
 
               <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>

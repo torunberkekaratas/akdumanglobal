@@ -438,9 +438,8 @@ export default function Gida() {
               maxWidth: 540,
             }}
           >
-            Restoran, kafe, otel ve kurumsal işletmelere güvenilir gıda tedariki sağlayan
-            çözüm ortağınız. Geniş ürün ağı ve düzenli teslimat sistemiyle
-            mutfağınız hiç beklemez.
+            Gemilerden restoranlara, otelden fabrika kantinine — ihtiyaç listenizi gönderin,
+            ertesi gün kapınızda olsun.
           </motion.p>
           <motion.div variants={fadeUp} style={{ marginTop: 32 }}>
             <button

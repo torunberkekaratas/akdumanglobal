@@ -2,10 +2,10 @@ import { useEffect, useRef, useState } from 'react'
 import { useInView } from 'framer-motion'
 
 const metrics = [
-  { value: 12, suffix: '+', label: 'Yıl Deneyim' },
-  { value: 576, suffix: '+', label: 'Mutlu Müşteri' },
-  { value: 3, suffix: '', label: 'Hizmet Alanı' },
-  { value: 24, suffix: '/7', label: 'Destek' },
+  { value: 12, suffix: '+', label: 'Yıl Sektör Deneyimi' },
+  { value: 576, suffix: '+', label: 'Kurumsal Müşteri' },
+  { value: 3, suffix: '', label: 'Hizmet Sektörü' },
+  { value: 24, suffix: '/7', label: 'Ulaşılabilirlik' },
 ]
 
 function Counter({ value, suffix, label, active }) {

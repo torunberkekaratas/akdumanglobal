@@ -388,10 +388,10 @@ export default function Temizlik() {
               Tedarikçi Markalar
             </motion.p>
             <motion.h2 variants={fadeUp} style={{ fontSize: 'clamp(24px,3vw,36px)', fontWeight: 800, color: 'var(--dark)', letterSpacing: '-0.4px', lineHeight: 1.2, marginBottom: 14 }}>
-              Sertifikalı markalarla güvenilir tedarik
+              Üreticiyle doğrudan çalışıyoruz
             </motion.h2>
             <motion.p variants={fadeUp} style={{ fontSize: 15, color: 'var(--muted)', lineHeight: 1.7, maxWidth: 560 }}>
-              Her ürün grubunda ISO onaylı, ulusal ve uluslararası sertifikalı üreticilerle çalışarak kalitenin sürekliliğini sağlıyoruz.
+              Katalogdaki her marka tedarikçisiyle doğrudan anlaşmamız var — arada toptancı yok. Stokta olan, hemen gönderilir.
             </motion.p>
           </motion.div>
 
@@ -468,7 +468,7 @@ export default function Temizlik() {
                 Hizmet Verdiğimiz Sektörler
               </motion.p>
               <motion.h2 variants={fadeUp} style={{ fontSize: 'clamp(24px,3vw,34px)', fontWeight: 800, color: 'var(--dark)', letterSpacing: '-0.4px', lineHeight: 1.2, marginBottom: 16 }}>
-                Her sektöre uygun çözüm
+                Kimin için tedarik yapıyoruz
               </motion.h2>
               <motion.p variants={fadeUp} style={{ fontSize: 15, color: 'var(--muted)', lineHeight: 1.75 }}>
                 Küçük işletmelerden büyük zincir tesislere, tek seferlik siparişten periyodik tedarik sözleşmelerine kadar her ölçekte hizmet veriyoruz.

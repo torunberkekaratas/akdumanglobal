@@ -110,9 +110,9 @@ export default function ContactForm() {
               letterSpacing: '-0.4px',
             }}
           >
-            Bizimle çalışmaya
+            Bir sorunuz mu var?
             <br />
-            hazır mısınız?
+            Hemen konuşalım.
           </h2>
           <p
             style={{
@@ -122,9 +122,8 @@ export default function ContactForm() {
               marginBottom: 40,
             }}
           >
-            Denizcilik sektörü sigortaları, sarf malzeme, tüm endüstriyel
-            temizlik ürünleri ve bilumum gıda tedarikleri konularında uzman
-            ekibimizle iletişime geçin.
+            Fiyat teklifi, poliçe detayı veya ürün kataloğu için bizi arayın
+            ya da formu doldurun — aynı gün geri dönelim.
           </p>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
