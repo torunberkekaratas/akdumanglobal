@@ -197,6 +197,7 @@ export default function Sigorta() {
 
         {/* geri */}
         <motion.button
+          className="hero-back"
           initial={{ opacity: 0, x: -14 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.7, ease: 'easeOut' }}
           onClick={() => navigate('/')}
           style={{ position: 'absolute', top: 96, left: 52, background: 'none', border: 'none', color: 'rgba(255,255,255,0.55)', cursor: 'pointer', fontSize: 12.5, fontFamily: 'inherit', display: 'flex', alignItems: 'center', gap: 7, zIndex: 2, padding: 0, transition: 'color 0.2s' }}
@@ -208,6 +209,7 @@ export default function Sigorta() {
 
         {/* hero text */}
         <motion.div
+          className="hero-text"
           initial="hidden" animate="show"
           variants={{ show: { transition: { staggerChildren: 0.13 } } }}
           style={{ position: 'relative', zIndex: 2, maxWidth: 1200, margin: '0 auto', padding: '0 64px', width: '100%' }}
@@ -228,7 +230,7 @@ export default function Sigorta() {
           <motion.p variants={fadeUp} style={{ fontSize: 17, color: 'rgba(255,255,255,0.68)', lineHeight: 1.75, maxWidth: 490, marginBottom: 44 }}>
             Denizcilik sektörüne özel kapsamlı sigorta ürünleri ile varlıklarınızı ve sorumluluklarınızı güvence altına alıyoruz.
           </motion.p>
-          <motion.div variants={fadeUp} style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 80 }}>
+          <motion.div variants={fadeUp} className="hero-cta-row" style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 80 }}>
             <button
               onClick={handleCta}
               style={{ background: '#185FA5', color: '#fff', border: 'none', borderRadius: 9, padding: '14px 36px', fontSize: 14, fontWeight: 700, cursor: 'pointer', fontFamily: 'inherit', transition: 'opacity 0.2s, transform 0.2s' }}
@@ -654,6 +656,11 @@ export default function Sigorta() {
         @media (max-width: 480px) {
           .card-grid { grid-template-columns: 1fr !important; }
           .stats-bar { grid-template-columns: repeat(2,1fr) !important; }
+        }
+        @media (max-width: 768px) {
+          .hero-back { top: 100px !important; left: 24px !important; font-size: 12px !important; }
+          .hero-text { padding-top: 150px !important; padding-left: 24px !important; padding-right: 24px !important; }
+          .hero-cta-row { margin-bottom: 48px !important; }
         }
       `}</style>
     </>

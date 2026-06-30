@@ -313,6 +313,7 @@ export default function Temizlik() {
 
         {/* back */}
         <motion.button
+          className="hero-back"
           initial={{ opacity: 0, x: -12 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.7 }}
           onClick={() => navigate('/')}
           style={{ position: 'absolute', top: 96, left: 48, background: 'none', border: 'none', color: 'rgba(255,255,255,0.65)', cursor: 'pointer', fontSize: 13, fontFamily: 'inherit', display: 'flex', alignItems: 'center', gap: 6, zIndex: 2, padding: 0, transition: 'color 0.2s' }}
@@ -324,6 +325,7 @@ export default function Temizlik() {
 
         {/* text */}
         <motion.div
+          className="hero-text"
           initial="hidden" animate="show"
           variants={{ show: { transition: { staggerChildren: 0.13 } } }}
           style={{ position: 'relative', zIndex: 2, maxWidth: 1100, margin: '0 auto', padding: '0 48px', width: '100%' }}
@@ -337,7 +339,7 @@ export default function Temizlik() {
           <motion.p variants={fadeUp} style={{ fontSize: 17, color: 'rgba(255,255,255,0.72)', lineHeight: 1.75, maxWidth: 500, marginBottom: 40 }}>
             Otelden fabrikaya, hastaneden restorana — sarf malzemeleri, endüstriyel kimyasallar, oto ve halı bakım ürünlerinde tek çatı altında profesyonel tedarik.
           </motion.p>
-          <motion.div variants={fadeUp} style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 72 }}>
+          <motion.div variants={fadeUp} className="hero-cta-row" style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 72 }}>
             <button onClick={handleCta} style={{ background: 'var(--amber)', color: '#fff', border: 'none', borderRadius: 8, padding: '14px 36px', fontSize: 14, fontWeight: 700, cursor: 'pointer', fontFamily: 'inherit', transition: 'opacity 0.2s' }}
               onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.85')}
               onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}>
@@ -551,6 +553,11 @@ export default function Temizlik() {
         }
         @media (max-width: 480px) {
           .product-grid { grid-template-columns: 1fr !important; }
+        }
+        @media (max-width: 768px) {
+          .hero-back { top: 100px !important; left: 24px !important; font-size: 12px !important; }
+          .hero-text { padding-top: 150px !important; padding-left: 24px !important; padding-right: 24px !important; }
+          .hero-cta-row { margin-bottom: 40px !important; }
         }
       `}</style>
     </>
