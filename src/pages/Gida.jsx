@@ -106,7 +106,7 @@ const urunGruplari = [
     color: '#8B1A1A',
     light: '#FDEAEA',
     image:
-      'https://images.unsplash.com/photo-1544025162-d76538b0a05c?w=800&q=80',
+      'https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=800&q=80',
     desc: 'Başyazıcı ve Danet markalarıyla seçkin et ürünleri, dilimliden kangala profesyonel şarküteri.',
     urunler: [
       'Başyazıcı Dana Sucuk (Kangal / Dilimli / Baton)',
