@@ -316,7 +316,7 @@ export default function Gida() {
           name="description"
           content="Restoran, otel ve catering işletmelerine bakliyat, peynir, zeytin, şarküteri ve baharat toplu tedariki. Düzenli teslimat, geniş ürün yelpazesi."
         />
-        <link rel="canonical" href="https://akdumanglobal.com/gida" />
+        <link rel="canonical" href="https://www.akdumanglobal.com/gida" />
       </Helmet>
 
       <Navbar />
