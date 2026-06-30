@@ -22,10 +22,7 @@ export default function ContactForm() {
   const handleSubmit = async (ev) => {
     ev.preventDefault()
     const e = validate()
-    if (Object.keys(e).length) {
-      setErrors(e)
-      return
-    }
+    if (Object.keys(e).length) { setErrors(e); return }
     setErrors({})
     setSendError(false)
     setSending(true)
@@ -42,7 +39,7 @@ export default function ContactForm() {
           Mesaj: form.message,
         }),
       })
-      if (!res.ok) throw new Error('Gönderim başarısız')
+      if (!res.ok) throw new Error()
       setSent(true)
       setForm({ name: '', company: '', phone: '', email: '', message: '' })
       setTimeout(() => setSent(false), 5000)
@@ -55,15 +52,16 @@ export default function ContactForm() {
 
   const inputStyle = (hasError) => ({
     width: '100%',
-    padding: '12px 14px',
+    padding: '11px 13px',
     fontSize: 14,
-    border: `1.5px solid ${hasError ? '#e53e3e' : 'var(--border)'}`,
-    borderRadius: 8,
+    fontWeight: 400,
+    border: `1px solid ${hasError ? '#DC2626' : 'var(--border)'}`,
+    borderRadius: 3,
     fontFamily: 'inherit',
     color: 'var(--text)',
     outline: 'none',
     background: '#fff',
-    transition: 'border-color 0.2s',
+    transition: 'border-color 0.15s',
   })
 
   return (
@@ -72,7 +70,7 @@ export default function ContactForm() {
       style={{
         background: 'var(--surface)',
         borderTop: '1px solid var(--border)',
-        padding: '80px 40px',
+        padding: '88px 40px',
       }}
     >
       <div
@@ -80,231 +78,139 @@ export default function ContactForm() {
           maxWidth: 1000,
           margin: '0 auto',
           display: 'grid',
-          gridTemplateColumns: '1fr 1.2fr',
-          gap: 64,
+          gridTemplateColumns: '1fr 1.3fr',
+          gap: 72,
           alignItems: 'start',
         }}
         className="contact-grid"
       >
-        {/* Left: Info */}
+        {/* Left */}
         <div>
-          <p
-            style={{
-              fontSize: 11,
-              fontWeight: 600,
-              letterSpacing: '3px',
-              color: 'var(--blue)',
-              textTransform: 'uppercase',
-              marginBottom: 14,
-            }}
-          >
+          <p style={{
+            fontSize: 11,
+            fontWeight: 600,
+            letterSpacing: '2.5px',
+            color: 'var(--muted)',
+            textTransform: 'uppercase',
+            marginBottom: 20,
+          }}>
             İletişim
           </p>
-          <h2
-            style={{
-              fontSize: 32,
-              fontWeight: 700,
-              color: 'var(--dark)',
-              lineHeight: 1.22,
-              marginBottom: 16,
-              letterSpacing: '-0.4px',
-            }}
-          >
-            Bir sorunuz mu var?
-            <br />
+
+          <h2 style={{
+            fontSize: 'clamp(26px, 3vw, 36px)',
+            fontWeight: 600,
+            color: 'var(--dark)',
+            lineHeight: 1.2,
+            marginBottom: 20,
+            letterSpacing: '-0.3px',
+          }}>
+            Bir sorunuz mu var?<br />
             Hemen konuşalım.
           </h2>
-          <p
-            style={{
-              fontSize: 15,
-              color: 'var(--muted)',
-              lineHeight: 1.7,
-              marginBottom: 40,
-            }}
-          >
+
+          <p style={{
+            fontSize: 15,
+            color: 'var(--muted)',
+            lineHeight: 1.75,
+            marginBottom: 48,
+            maxWidth: 360,
+          }}>
             Fiyat teklifi, poliçe detayı veya ürün kataloğu için bizi arayın
             ya da formu doldurun — aynı gün geri dönelim.
           </p>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
             {[
-              { Icon: IconMapPin, text: 'İstanbul, Türkiye' },
-              { Icon: IconPhone, text: '+90 543 850 77 61', href: 'tel:+905438507761' },
-              { Icon: IconMail, text: 'akdumanglobal@gmail.com', href: 'mailto:akdumanglobal@gmail.com' },
+              { Icon: IconMapPin, text: 'İstanbul, Türkiye', href: null },
+              { Icon: IconPhone,  text: '+90 543 850 77 61', href: 'tel:+905438507761' },
+              { Icon: IconMail,   text: 'akdumanglobal@gmail.com', href: 'mailto:akdumanglobal@gmail.com' },
             ].map(({ Icon, text, href }) => {
-              const Wrapper = href ? 'a' : 'div'
+              const El = href ? 'a' : 'div'
               return (
-                <Wrapper
+                <El
                   key={text}
                   href={href}
-                  style={{ display: 'flex', alignItems: 'center', gap: 14, textDecoration: 'none' }}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 12,
+                    textDecoration: 'none',
+                    color: 'var(--text)',
+                  }}
                 >
-                  <div
-                    style={{
-                      width: 40,
-                      height: 40,
-                      borderRadius: 10,
-                      background: 'var(--blue-light)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      flexShrink: 0,
-                    }}
-                  >
-                    <Icon size={18} color="var(--blue)" />
-                  </div>
-                  <span style={{ fontSize: 14, color: 'var(--text)' }}>{text}</span>
-                </Wrapper>
+                  <Icon size={16} color="var(--muted)" strokeWidth={1.5} style={{ flexShrink: 0 }} />
+                  <span style={{ fontSize: 14, color: 'var(--text)', fontWeight: 400 }}>{text}</span>
+                </El>
               )
             })}
           </div>
         </div>
 
-        {/* Right: Form */}
-        <div
-          style={{
-            background: '#fff',
-            borderRadius: 16,
-            padding: '36px 32px',
-            border: '1px solid var(--border)',
-            boxShadow: '0 4px 24px rgba(0,0,0,0.05)',
-          }}
-        >
+        {/* Right — form */}
+        <div style={{
+          background: '#fff',
+          borderRadius: 4,
+          padding: '36px 32px',
+          border: '1px solid var(--border)',
+          borderTop: '3px solid var(--dark)',
+        }}>
           {sent ? (
-            <div
-              style={{
-                textAlign: 'center',
-                padding: '48px 0',
-              }}
-            >
-              <div style={{ fontSize: 40, marginBottom: 16 }}>✓</div>
-              <p style={{ fontSize: 16, fontWeight: 600, color: 'var(--dark)', marginBottom: 8 }}>
-                Mesajınız iletildi!
+            <div style={{ padding: '48px 0', textAlign: 'center' }}>
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--dark)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ margin: '0 auto 16px' }}>
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <p style={{ fontSize: 16, fontWeight: 600, color: 'var(--dark)', marginBottom: 6 }}>
+                Mesajınız iletildi.
               </p>
               <p style={{ fontSize: 14, color: 'var(--muted)' }}>
-                En kısa sürede sizinle iletişime geçeceğiz.
+                Aynı gün geri dönüyoruz.
               </p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} noValidate>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
-                <div>
-                  <label
-                    style={{
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+                {[
+                  { key: 'name',    label: 'Ad Soyad',  type: 'text',  placeholder: 'Ahmet Yılmaz',        required: true },
+                  { key: 'company', label: 'Şirket',    type: 'text',  placeholder: 'Şirket adı (opsiyonel)', required: false },
+                  { key: 'phone',   label: 'Telefon',   type: 'tel',   placeholder: '+90 5XX XXX XX XX',   required: true },
+                  { key: 'email',   label: 'E-posta',   type: 'email', placeholder: 'ornek@firma.com',     required: true },
+                ].map(({ key, label, type, placeholder, required }) => (
+                  <div key={key}>
+                    <label style={{
                       display: 'block',
-                      fontSize: 13,
+                      fontSize: 12,
                       fontWeight: 500,
-                      color: 'var(--text)',
-                      marginBottom: 6,
-                    }}
-                  >
-                    Ad Soyad *
-                  </label>
-                  <input
-                    type="text"
-                    value={form.name}
-                    onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    placeholder="Ahmet Yılmaz"
-                    style={inputStyle(errors.name)}
-                    onFocus={(e) => (e.target.style.borderColor = 'var(--blue)')}
-                    onBlur={(e) =>
-                      (e.target.style.borderColor = errors.name ? '#e53e3e' : 'var(--border)')
-                    }
-                  />
-                  {errors.name && (
-                    <p style={{ fontSize: 12, color: '#e53e3e', marginTop: 4 }}>{errors.name}</p>
-                  )}
-                </div>
+                      color: 'var(--muted)',
+                      marginBottom: 5,
+                      letterSpacing: '0.3px',
+                    }}>
+                      {label}{required && ' *'}
+                    </label>
+                    <input
+                      type={type}
+                      value={form[key]}
+                      onChange={(e) => setForm({ ...form, [key]: e.target.value })}
+                      placeholder={placeholder}
+                      style={inputStyle(errors[key])}
+                      onFocus={(e) => (e.target.style.borderColor = 'var(--dark)')}
+                      onBlur={(e) => (e.target.style.borderColor = errors[key] ? '#DC2626' : 'var(--border)')}
+                    />
+                    {errors[key] && (
+                      <p style={{ fontSize: 12, color: '#DC2626', marginTop: 3 }}>{errors[key]}</p>
+                    )}
+                  </div>
+                ))}
 
                 <div>
-                  <label
-                    style={{
-                      display: 'block',
-                      fontSize: 13,
-                      fontWeight: 500,
-                      color: 'var(--text)',
-                      marginBottom: 6,
-                    }}
-                  >
-                    Şirket
-                  </label>
-                  <input
-                    type="text"
-                    value={form.company}
-                    onChange={(e) => setForm({ ...form, company: e.target.value })}
-                    placeholder="Şirket adı (opsiyonel)"
-                    style={inputStyle(false)}
-                    onFocus={(e) => (e.target.style.borderColor = 'var(--blue)')}
-                    onBlur={(e) => (e.target.style.borderColor = 'var(--border)')}
-                  />
-                </div>
-
-                <div>
-                  <label
-                    style={{
-                      display: 'block',
-                      fontSize: 13,
-                      fontWeight: 500,
-                      color: 'var(--text)',
-                      marginBottom: 6,
-                    }}
-                  >
-                    Telefon *
-                  </label>
-                  <input
-                    type="tel"
-                    value={form.phone}
-                    onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                    placeholder="+90 5XX XXX XX XX"
-                    style={inputStyle(errors.phone)}
-                    onFocus={(e) => (e.target.style.borderColor = 'var(--blue)')}
-                    onBlur={(e) =>
-                      (e.target.style.borderColor = errors.phone ? '#e53e3e' : 'var(--border)')
-                    }
-                  />
-                  {errors.phone && (
-                    <p style={{ fontSize: 12, color: '#e53e3e', marginTop: 4 }}>{errors.phone}</p>
-                  )}
-                </div>
-
-                <div>
-                  <label
-                    style={{
-                      display: 'block',
-                      fontSize: 13,
-                      fontWeight: 500,
-                      color: 'var(--text)',
-                      marginBottom: 6,
-                    }}
-                  >
-                    E-posta *
-                  </label>
-                  <input
-                    type="email"
-                    value={form.email}
-                    onChange={(e) => setForm({ ...form, email: e.target.value })}
-                    placeholder="ornek@firma.com"
-                    style={inputStyle(errors.email)}
-                    onFocus={(e) => (e.target.style.borderColor = 'var(--blue)')}
-                    onBlur={(e) =>
-                      (e.target.style.borderColor = errors.email ? '#e53e3e' : 'var(--border)')
-                    }
-                  />
-                  {errors.email && (
-                    <p style={{ fontSize: 12, color: '#e53e3e', marginTop: 4 }}>{errors.email}</p>
-                  )}
-                </div>
-
-                <div>
-                  <label
-                    style={{
-                      display: 'block',
-                      fontSize: 13,
-                      fontWeight: 500,
-                      color: 'var(--text)',
-                      marginBottom: 6,
-                    }}
-                  >
+                  <label style={{
+                    display: 'block',
+                    fontSize: 12,
+                    fontWeight: 500,
+                    color: 'var(--muted)',
+                    marginBottom: 5,
+                    letterSpacing: '0.3px',
+                  }}>
                     Mesajınız *
                   </label>
                   <textarea
@@ -312,26 +218,18 @@ export default function ContactForm() {
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
                     placeholder="Hizmet ihtiyacınızı kısaca belirtin..."
-                    style={{
-                      ...inputStyle(errors.message),
-                      resize: 'vertical',
-                      minHeight: 120,
-                    }}
-                    onFocus={(e) => (e.target.style.borderColor = 'var(--blue)')}
-                    onBlur={(e) =>
-                      (e.target.style.borderColor = errors.message ? '#e53e3e' : 'var(--border)')
-                    }
+                    style={{ ...inputStyle(errors.message), resize: 'vertical', minHeight: 110 }}
+                    onFocus={(e) => (e.target.style.borderColor = 'var(--dark)')}
+                    onBlur={(e) => (e.target.style.borderColor = errors.message ? '#DC2626' : 'var(--border)')}
                   />
                   {errors.message && (
-                    <p style={{ fontSize: 12, color: '#e53e3e', marginTop: 4 }}>
-                      {errors.message}
-                    </p>
+                    <p style={{ fontSize: 12, color: '#DC2626', marginTop: 3 }}>{errors.message}</p>
                   )}
                 </div>
 
                 {sendError && (
-                  <p style={{ fontSize: 12.5, color: '#e53e3e', margin: 0 }}>
-                    Mesajınız gönderilemedi. Lütfen tekrar deneyin veya bizi doğrudan arayın.
+                  <p style={{ fontSize: 12.5, color: '#DC2626' }}>
+                    Gönderilemedi. Lütfen tekrar deneyin veya doğrudan arayın.
                   </p>
                 )}
 
@@ -340,27 +238,28 @@ export default function ContactForm() {
                   disabled={sending}
                   style={{
                     width: '100%',
-                    padding: '13px 24px',
-                    background: 'var(--blue)',
+                    padding: '12px 24px',
+                    background: 'var(--dark)',
                     color: '#fff',
                     border: 'none',
-                    borderRadius: 8,
-                    fontSize: 14,
-                    fontWeight: 600,
+                    borderRadius: 3,
+                    fontSize: 13,
+                    fontWeight: 500,
+                    letterSpacing: '0.3px',
                     cursor: sending ? 'not-allowed' : 'pointer',
-                    opacity: sending ? 0.7 : 1,
+                    opacity: sending ? 0.65 : 1,
                     fontFamily: 'inherit',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     gap: 8,
-                    transition: 'opacity 0.2s',
+                    transition: 'opacity 0.15s',
                   }}
-                  onMouseEnter={(e) => { if (!sending) e.currentTarget.style.opacity = '0.88' }}
+                  onMouseEnter={(e) => { if (!sending) e.currentTarget.style.opacity = '0.85' }}
                   onMouseLeave={(e) => { if (!sending) e.currentTarget.style.opacity = '1' }}
                 >
-                  <IconSend size={16} />
-                  {sending ? 'Gönderiliyor...' : 'Gönder'}
+                  <IconSend size={14} strokeWidth={1.5} />
+                  {sending ? 'Gönderiliyor…' : 'Gönder'}
                 </button>
               </div>
             </form>

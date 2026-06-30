@@ -194,7 +194,7 @@ function ProductCard({ item, onClick }) {
       style={{
         background: '#fff',
         border: `1px solid ${hovered ? item.color : 'var(--border)'}`,
-        borderRadius: 12,
+        borderRadius: 4,
         overflow: 'hidden',
         transform: hovered ? 'translateY(-3px)' : 'translateY(0)',
         transition: 'border-color 0.2s, transform 0.22s, box-shadow 0.22s',
@@ -444,7 +444,7 @@ export default function Gida() {
           <motion.div variants={fadeUp} style={{ marginTop: 32 }}>
             <button
               onClick={() => navigate('/kataloglar?sector=gida')}
-              style={{ display: 'flex', alignItems: 'center', gap: 10, background: '#fff', color: 'var(--green)', border: 'none', borderRadius: 10, padding: '12px 24px 12px 10px', fontSize: 14.5, fontWeight: 800, cursor: 'pointer', fontFamily: 'inherit', boxShadow: '0 10px 26px rgba(0,0,0,0.22)', transition: 'transform 0.2s ease, box-shadow 0.2s ease' }}
+              style={{ display: 'flex', alignItems: 'center', gap: 10, background: '#fff', color: 'var(--green)', border: 'none', borderRadius: 3, padding: '12px 24px 12px 10px', fontSize: 14.5, fontWeight: 800, cursor: 'pointer', fontFamily: 'inherit', boxShadow: '0 10px 26px rgba(0,0,0,0.22)', transition: 'transform 0.2s ease, box-shadow 0.2s ease' }}
               onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 14px 32px rgba(0,0,0,0.28)' }}
               onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 10px 26px rgba(0,0,0,0.22)' }}
             >
@@ -486,7 +486,7 @@ export default function Gida() {
                   style={{
                     width: 44,
                     height: 44,
-                    borderRadius: 10,
+                    borderRadius: 3,
                     background: 'rgba(255,255,255,0.15)',
                     display: 'flex',
                     alignItems: 'center',

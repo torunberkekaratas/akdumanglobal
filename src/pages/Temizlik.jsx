@@ -222,7 +222,7 @@ function ProductCard({ item, onClick }) {
       onClick={onClick}
       style={{
         background: '#fff',
-        borderRadius: 14,
+        borderRadius: 4,
         overflow: 'hidden',
         boxShadow: hov ? '0 12px 40px rgba(0,0,0,0.12)' : '0 2px 12px rgba(0,0,0,0.05)',
         transform: hov ? 'translateY(-4px)' : 'translateY(0)',
@@ -249,7 +249,7 @@ function ProductCard({ item, onClick }) {
           }}
         />
         <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(to top, rgba(0,0,0,0.72) 0%, transparent 55%)` }} />
-        <div style={{ position: 'absolute', top: 12, right: 12, background: 'rgba(0,0,0,0.55)', backdropFilter: 'blur(6px)', color: '#fff', fontSize: 10, fontWeight: 700, letterSpacing: '0.5px', padding: '4px 10px', borderRadius: 20 }}>
+        <div style={{ position: 'absolute', top: 12, right: 12, background: 'rgba(0,0,0,0.55)', backdropFilter: 'blur(6px)', color: '#fff', fontSize: 10, fontWeight: 700, letterSpacing: '0.5px', padding: '4px 10px', borderRadius: 3 }}>
           {item.brand}
         </div>
         <div style={{ position: 'absolute', bottom: 14, left: 16, display: 'flex', alignItems: 'center', gap: 8 }}>
@@ -353,7 +353,7 @@ export default function Temizlik() {
             </button>
             <button
               onClick={() => navigate('/kataloglar?sector=temizlik')}
-              style={{ display: 'flex', alignItems: 'center', gap: 10, background: '#fff', color: 'var(--amber)', border: 'none', borderRadius: 10, padding: '12px 24px 12px 10px', fontSize: 14.5, fontWeight: 800, cursor: 'pointer', fontFamily: 'inherit', boxShadow: '0 10px 26px rgba(0,0,0,0.22)', transition: 'transform 0.2s ease, box-shadow 0.2s ease' }}
+              style={{ display: 'flex', alignItems: 'center', gap: 10, background: '#fff', color: 'var(--amber)', border: 'none', borderRadius: 3, padding: '12px 24px 12px 10px', fontSize: 14.5, fontWeight: 800, cursor: 'pointer', fontFamily: 'inherit', boxShadow: '0 10px 26px rgba(0,0,0,0.22)', transition: 'transform 0.2s ease, box-shadow 0.2s ease' }}
               onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 14px 32px rgba(0,0,0,0.28)' }}
               onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 10px 26px rgba(0,0,0,0.22)' }}
             >
@@ -399,14 +399,12 @@ export default function Temizlik() {
             style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 24 }} className="brands-grid">
             {markalar.map((m) => (
               <motion.div key={m.name} variants={cardAnim}
-                style={{ borderRadius: 14, border: '1px solid var(--border)', overflow: 'hidden', background: '#fff', boxShadow: '0 2px 12px rgba(0,0,0,0.04)' }}>
+                style={{ borderRadius: 4, border: '1px solid var(--border)', overflow: 'hidden', background: '#fff', boxShadow: '0 2px 12px rgba(0,0,0,0.04)' }}>
                 {/* top accent */}
                 <div style={{ height: 4, background: m.color }} />
                 <div style={{ padding: '28px 28px 30px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 18 }}>
-                    <div style={{ width: 48, height: 48, borderRadius: 12, background: `${m.color}14`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                      <m.icon size={22} color={m.color} />
-                    </div>
+                    <m.icon size={22} color={m.color} strokeWidth={1.5} style={{ flexShrink: 0 }} />
                     <div>
                       <div style={{ fontSize: 17, fontWeight: 800, color: 'var(--dark)', letterSpacing: '-0.2px' }}>{m.name}</div>
                       <div style={{ fontSize: 12, color: 'var(--muted)', fontWeight: 500 }}>{m.short}</div>
@@ -417,7 +415,7 @@ export default function Temizlik() {
 
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginBottom: 20 }}>
                     {m.kategoriler.map(k => (
-                      <span key={k} style={{ fontSize: 11, fontWeight: 600, background: `${m.color}10`, color: m.color, borderRadius: 5, padding: '4px 10px' }}>{k}</span>
+                      <span key={k} style={{ fontSize: 11, fontWeight: 600, background: `${m.color}10`, color: m.color, borderRadius: 2, padding: '4px 10px' }}>{k}</span>
                     ))}
                   </div>
 

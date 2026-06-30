@@ -2,10 +2,10 @@ import { useEffect, useRef, useState } from 'react'
 import { useInView } from 'framer-motion'
 
 const metrics = [
-  { value: 12, suffix: '+', label: 'Yıl Sektör Deneyimi' },
-  { value: 576, suffix: '+', label: 'Kurumsal Müşteri' },
-  { value: 3, suffix: '', label: 'Hizmet Sektörü' },
-  { value: 24, suffix: '/7', label: 'Ulaşılabilirlik' },
+  { value: 12,  suffix: '+',  label: 'Yıl Sektör Deneyimi' },
+  { value: 576, suffix: '+',  label: 'Kurumsal Müşteri' },
+  { value: 3,   suffix: '',   label: 'Hizmet Sektörü' },
+  { value: 24,  suffix: '/7', label: 'Ulaşılabilirlik' },
 ]
 
 function Counter({ value, suffix, label, active }) {
@@ -14,11 +14,10 @@ function Counter({ value, suffix, label, active }) {
 
   useEffect(() => {
     if (!active) return
-    const duration = 1400
+    const duration = 1200
     const start = performance.now()
     const animate = (now) => {
-      const elapsed = now - start
-      const progress = Math.min(elapsed / duration, 1)
+      const progress = Math.min((now - start) / duration, 1)
       const eased = 1 - Math.pow(1 - progress, 3)
       setCount(Math.round(eased * value))
       if (progress < 1) raf.current = requestAnimationFrame(animate)
@@ -28,34 +27,25 @@ function Counter({ value, suffix, label, active }) {
   }, [active, value])
 
   return (
-    <div
-      style={{
-        textAlign: 'center',
-        padding: '0 24px',
-      }}
-    >
-      <div
-        style={{
-          fontSize: 'clamp(36px, 4vw, 56px)',
-          fontWeight: 800,
-          color: 'var(--dark)',
-          lineHeight: 1,
-          marginBottom: 8,
-          letterSpacing: '-1px',
-        }}
-      >
-        {count}
-        {suffix}
+    <div className="whyus-item" style={{ flex: 1, padding: '32px 40px' }}>
+      <div style={{
+        fontSize: 'clamp(40px, 4.5vw, 58px)',
+        fontWeight: 300,
+        color: 'var(--dark)',
+        lineHeight: 1,
+        letterSpacing: '-2px',
+        marginBottom: 10,
+        fontVariantNumeric: 'tabular-nums',
+      }}>
+        {count}{suffix}
       </div>
-      <div
-        style={{
-          fontSize: 13,
-          color: 'var(--muted)',
-          fontWeight: 500,
-          letterSpacing: '0.5px',
-          textTransform: 'uppercase',
-        }}
-      >
+      <div style={{
+        fontSize: 11,
+        color: 'var(--muted)',
+        fontWeight: 500,
+        letterSpacing: '1.5px',
+        textTransform: 'uppercase',
+      }}>
         {label}
       </div>
     </div>
@@ -64,41 +54,42 @@ function Counter({ value, suffix, label, active }) {
 
 export default function WhyUs() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: '-80px' })
+  const isInView = useInView(ref, { once: true, margin: '-60px' })
 
   return (
     <section
       ref={ref}
-      className="whyus-section"
       style={{
         background: '#fff',
         borderBottom: '1px solid var(--border)',
-        padding: '48px 40px',
       }}
     >
       <div
-        className="whyus-grid"
+        className="whyus-strip"
         style={{
-          maxWidth: 900,
+          maxWidth: 1100,
           margin: '0 auto',
-          display: 'grid',
-          gridTemplateColumns: 'repeat(4, 1fr)',
-          gap: 24,
+          display: 'flex',
         }}
       >
-        {metrics.map((m) => (
-          <Counter key={m.label} {...m} active={isInView} />
+        {metrics.map((m, i) => (
+          <div key={m.label} style={{ display: 'flex', flex: 1 }}>
+            {i > 0 && (
+              <div style={{ width: 1, background: 'var(--border)', flexShrink: 0 }} />
+            )}
+            <Counter {...m} active={isInView} />
+          </div>
         ))}
       </div>
 
       <style>{`
-        @media (max-width: 768px) {
-          .whyus-section {
-            padding: 32px 24px !important;
+        @media (max-width: 640px) {
+          .whyus-strip {
+            flex-wrap: wrap !important;
           }
-          .whyus-grid {
-            grid-template-columns: repeat(2, 1fr) !important;
-            gap: 28px 16px !important;
+          .whyus-item {
+            flex: 0 0 50% !important;
+            padding: 24px 28px !important;
           }
         }
       `}</style>

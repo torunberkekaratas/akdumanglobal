@@ -82,11 +82,11 @@ function InsuranceCard({ icon: Icon, title, items, accent = '#185FA5', dark = fa
       onClick={onClick}
       style={{
         background: bg,
-        borderRadius: 12,
+        borderRadius: 4,
         overflow: 'hidden',
-        boxShadow: hov ? (dark ? '0 8px 28px rgba(0,0,0,0.4)' : '0 8px 32px rgba(24,95,165,0.14)') : '0 2px 12px rgba(0,0,0,0.06)',
-        transform: hov ? 'translateY(-4px)' : 'translateY(0)',
-        transition: 'box-shadow 0.25s, transform 0.25s, background 0.25s, border 0.25s',
+        boxShadow: hov ? (dark ? '0 6px 20px rgba(0,0,0,0.35)' : '0 4px 18px rgba(0,0,0,0.1)') : 'none',
+        transform: hov ? 'translateY(-3px)' : 'translateY(0)',
+        transition: 'box-shadow 0.2s, transform 0.2s, background 0.2s, border 0.2s',
         border,
         display: 'flex',
         flexDirection: 'column',
@@ -95,17 +95,11 @@ function InsuranceCard({ icon: Icon, title, items, accent = '#185FA5', dark = fa
         WebkitBackdropFilter: dark ? 'blur(12px)' : 'none',
       }}
     >
-      <div style={{ height: 3, background: hov ? accent : (dark ? 'rgba(255,255,255,0.1)' : 'var(--border)'), transition: 'background 0.25s' }} />
+      <div style={{ height: 2, background: hov ? accent : (dark ? 'rgba(255,255,255,0.08)' : 'var(--border)'), transition: 'background 0.2s' }} />
       <div style={{ padding: '20px 20px 22px' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 14 }}>
-          <div style={{
-            width: 38, height: 38, borderRadius: 9,
-            background: dark ? `${accent}28` : `${accent}14`,
-            display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
-          }}>
-            <Icon size={19} color={dark ? '#4a9eff' : accent} />
-          </div>
-          <span style={{ fontSize: 13.5, fontWeight: 700, color: textColor, lineHeight: 1.3 }}>{title}</span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
+          <Icon size={18} color={dark ? 'rgba(255,255,255,0.55)' : accent} strokeWidth={1.5} style={{ flexShrink: 0 }} />
+          <span style={{ fontSize: 13.5, fontWeight: 600, color: textColor, lineHeight: 1.3 }}>{title}</span>
         </div>
         <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 14 }}>
           {items.map((item, i) => (
@@ -428,7 +422,7 @@ export default function Sigorta() {
           </motion.div>
 
           {/* asimetrik bento */}
-          <div style={{ display: 'grid', gridTemplateColumns: '56% 44%', gridTemplateRows: '270px 270px', gap: 4, marginBottom: 56, borderRadius: 16, overflow: 'hidden' }} className="tersane-bento">
+          <div style={{ display: 'grid', gridTemplateColumns: '56% 44%', gridTemplateRows: '270px 270px', gap: 4, marginBottom: 56, borderRadius: 4, overflow: 'hidden' }} className="tersane-bento">
 
             {/* sol büyük foto */}
             <motion.div
@@ -489,8 +483,8 @@ export default function Sigorta() {
               style={{ background: '#0a192f', display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '32px 36px', gap: 10 }}
             >
               {['İnşaat Tüm Riskler', 'Makine Kırılması', 'Siber Risk', 'Çevre Kirliliği', 'Mal Varlığı'].map((tag) => (
-                <span key={tag} style={{ fontSize: 12, fontWeight: 700, background: 'rgba(24,95,165,0.28)', color: '#4a9eff', borderRadius: 6, padding: '6px 14px', display: 'inline-block', width: 'fit-content' }}>
-                  {tag}
+                <span key={tag} style={{ fontSize: 11.5, fontWeight: 500, color: 'rgba(255,255,255,0.75)', letterSpacing: '0.5px', display: 'inline-block' }}>
+                  — {tag}
                 </span>
               ))}
             </motion.div>
@@ -588,9 +582,7 @@ export default function Sigorta() {
                 custom={i}
                 style={{ padding: '0 48px', borderRight: i < 2 ? '1px solid rgba(255,255,255,0.07)' : 'none', textAlign: 'center' }}
               >
-                <div style={{ display: 'inline-flex', width: 64, height: 64, borderRadius: 16, background: 'rgba(24,95,165,0.18)', border: '1px solid rgba(24,95,165,0.3)', alignItems: 'center', justifyContent: 'center', marginBottom: 20 }}>
-                  <span style={{ fontSize: 18, fontWeight: 900, color: '#4a9eff', letterSpacing: '-0.5px' }}>{step.n}</span>
-                </div>
+                <div style={{ fontSize: 11, fontWeight: 500, color: 'rgba(255,255,255,0.35)', letterSpacing: '2px', marginBottom: 16 }}>{step.n}</div>
                 <div style={{ fontSize: 18, fontWeight: 800, color: '#fff', marginBottom: 14, letterSpacing: '-0.2px' }}>{step.title}</div>
                 <div style={{ fontSize: 14, color: 'rgba(255,255,255,0.46)', lineHeight: 1.72 }}>{step.desc}</div>
               </motion.div>
@@ -613,9 +605,8 @@ export default function Sigorta() {
           initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger}
           style={{ position: 'relative', zIndex: 1, maxWidth: 620, margin: '0 auto' }}
         >
-          <motion.div variants={fadeUp} style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 24, background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,0.22)', borderRadius: 100, padding: '6px 18px 6px 10px' }}>
-            <div style={{ width: 6, height: 6, borderRadius: '50%', background: '#fff' }} />
-            <span style={{ fontSize: 10, fontWeight: 800, letterSpacing: '3px', color: '#fff', textTransform: 'uppercase' }}>Size Özel Teklif</span>
+          <motion.div variants={fadeUp} style={{ fontSize: 11, fontWeight: 500, letterSpacing: '2.5px', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', marginBottom: 24 }}>
+            Size Özel Teklif
           </motion.div>
           <motion.h2 variants={fadeUp} style={{ fontSize: 'clamp(24px,3.5vw,38px)', fontWeight: 900, color: '#fff', lineHeight: 1.2, marginBottom: 18, letterSpacing: '-0.5px' }}>
             Riskinizi birlikte değerlendirelim
@@ -626,7 +617,7 @@ export default function Sigorta() {
           <motion.div variants={fadeUp} style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
             <button
               onClick={handleCta}
-              style={{ background: '#fff', color: '#185FA5', border: 'none', borderRadius: 9, padding: '15px 40px', fontSize: 14, fontWeight: 800, cursor: 'pointer', fontFamily: 'inherit', transition: 'opacity 0.18s, transform 0.18s' }}
+              style={{ background: '#fff', color: '#185FA5', border: 'none', borderRadius: 3, padding: '14px 40px', fontSize: 14, fontWeight: 600, cursor: 'pointer', fontFamily: 'inherit', transition: 'opacity 0.18s, transform 0.18s' }}
               onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.9'; e.currentTarget.style.transform = 'translateY(-1px)' }}
               onMouseLeave={(e) => { e.currentTarget.style.opacity = '1'; e.currentTarget.style.transform = 'translateY(0)' }}
             >

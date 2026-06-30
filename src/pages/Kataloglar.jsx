@@ -44,7 +44,7 @@ function CatalogCard({ k, color }) {
         display: 'flex', flexDirection: 'column',
         background: '#fff',
         border: `1px solid ${hov ? color : 'var(--border)'}`,
-        borderRadius: 16, overflow: 'hidden', textDecoration: 'none',
+        borderRadius: 4, overflow: 'hidden', textDecoration: 'none',
         boxShadow: hov ? `0 14px 36px ${color}22` : '0 2px 10px rgba(0,0,0,0.05)',
         transform: hov ? 'translateY(-4px)' : 'translateY(0)',
         transition: 'box-shadow 0.25s, transform 0.25s, border-color 0.25s',
@@ -52,12 +52,7 @@ function CatalogCard({ k, color }) {
     >
       <div style={{ height: 3, background: hov ? color : 'var(--border)', transition: 'background 0.25s' }} />
       <div style={{ padding: '24px 24px 20px', display: 'flex', gap: 16, flex: 1 }}>
-        <div style={{
-          width: 50, height: 50, borderRadius: 13, flexShrink: 0,
-          background: `${color}14`, display: 'flex', alignItems: 'center', justifyContent: 'center',
-        }}>
-          <IconFileTypePdf size={24} color={color} />
-        </div>
+        <IconFileTypePdf size={22} color={color} strokeWidth={1.5} style={{ flexShrink: 0, marginTop: 2 }} />
         <div style={{ flex: 1, minWidth: 0 }}>
           <div style={{ fontSize: 15, fontWeight: 800, color: 'var(--dark)', lineHeight: 1.32, marginBottom: 6, letterSpacing: '-0.2px' }}>
             {k.title}
@@ -140,7 +135,7 @@ export default function Kataloglar() {
 
         <div style={{ position: 'relative', zIndex: 1, maxWidth: 1200, margin: '0 auto' }}>
           <motion.div initial="hidden" animate="show" variants={stagger} style={{ paddingBottom: 64 }}>
-            <motion.div variants={fadeUp} style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 24, background: 'rgba(24,95,165,0.25)', backdropFilter: 'blur(10px)', border: '1px solid rgba(74,158,255,0.45)', borderRadius: 100, padding: '6px 18px 6px 10px' }}>
+            <motion.div variants={fadeUp} style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 24, background: 'rgba(24,95,165,0.25)', backdropFilter: 'blur(10px)', border: '1px solid rgba(74,158,255,0.45)', borderRadius: 3, padding: '6px 18px 6px 10px' }}>
               <div style={{ width: 7, height: 7, borderRadius: '50%', background: '#4a9eff', boxShadow: '0 0 8px #4a9eff' }} />
               <span style={{ fontSize: 10.5, fontWeight: 800, letterSpacing: '2.5px', color: '#4a9eff', textTransform: 'uppercase' }}>Akduman Global Kataloglar</span>
             </motion.div>
@@ -163,7 +158,7 @@ export default function Kataloglar() {
                     style={{
                       display: 'flex', alignItems: 'center', gap: 10,
                       background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(8px)',
-                      border: '1px solid rgba(255,255,255,0.14)', borderRadius: 12,
+                      border: '1px solid rgba(255,255,255,0.14)', borderRadius: 4,
                       padding: '12px 18px', cursor: 'pointer', fontFamily: 'inherit',
                       transition: 'background 0.2s, border-color 0.2s',
                     }}
@@ -174,7 +169,7 @@ export default function Kataloglar() {
                       <Icon size={15} color={s.color === '#3B6D11' ? '#7fd957' : (s.color === '#854F0B' ? '#ffb15c' : '#4a9eff')} />
                     </div>
                     <span style={{ fontSize: 13, fontWeight: 700, color: '#fff' }}>{s.label}</span>
-                    <span style={{ fontSize: 11, fontWeight: 800, color: 'rgba(255,255,255,0.5)', background: 'rgba(255,255,255,0.1)', borderRadius: 100, padding: '2px 8px' }}>
+                    <span style={{ fontSize: 11, fontWeight: 800, color: 'rgba(255,255,255,0.5)', background: 'rgba(255,255,255,0.1)', borderRadius: 3, padding: '2px 8px' }}>
                       {count}
                     </span>
                   </button>
@@ -214,11 +209,9 @@ export default function Kataloglar() {
             <div style={{ maxWidth: 1200, margin: '0 auto' }}>
               <motion.div initial="hidden" whileInView="show" viewport={{ once: true, margin: '-60px' }} variants={stagger} style={{ marginBottom: 44, display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', flexWrap: 'wrap', gap: 20 }}>
                 <div>
-                  <motion.div variants={fadeUp} style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
-                    <div style={{ width: 40, height: 40, borderRadius: 11, background: `${s.color}14`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <Icon size={19} color={s.color} />
-                    </div>
-                    <span style={{ fontSize: 10.5, fontWeight: 800, letterSpacing: '3px', color: s.color, textTransform: 'uppercase' }}>{s.label}</span>
+                  <motion.div variants={fadeUp} style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
+                    <Icon size={17} color={s.color} strokeWidth={1.5} />
+                    <span style={{ fontSize: 10.5, fontWeight: 600, letterSpacing: '2.5px', color: 'var(--muted)', textTransform: 'uppercase' }}>{s.label}</span>
                   </motion.div>
                   <motion.h2 variants={fadeUp} style={{ fontSize: 'clamp(22px,2.4vw,30px)', fontWeight: 900, color: 'var(--dark)', letterSpacing: '-0.4px' }}>
                     {items.length > 0 ? `${items.length} Katalog Mevcut` : 'Kataloglar Hazırlanıyor'}
@@ -227,7 +220,7 @@ export default function Kataloglar() {
                 <motion.button
                   variants={fadeUp}
                   onClick={() => navigate(s.path)}
-                  style={{ display: 'flex', alignItems: 'center', gap: 6, background: 'none', border: `1.5px solid ${s.color}`, color: s.color, borderRadius: 9, padding: '11px 20px', fontSize: 13, fontWeight: 700, cursor: 'pointer', fontFamily: 'inherit', transition: 'background 0.2s, color 0.2s' }}
+                  style={{ display: 'flex', alignItems: 'center', gap: 6, background: 'none', border: `1px solid ${s.color}`, color: s.color, borderRadius: 3, padding: '10px 18px', fontSize: 13, fontWeight: 500, cursor: 'pointer', fontFamily: 'inherit', transition: 'background 0.2s, color 0.2s' }}
                   onMouseEnter={(e) => { e.currentTarget.style.background = s.color; e.currentTarget.style.color = '#fff' }}
                   onMouseLeave={(e) => { e.currentTarget.style.background = 'none'; e.currentTarget.style.color = s.color }}
                 >
@@ -246,9 +239,9 @@ export default function Kataloglar() {
               ) : (
                 <motion.div
                   initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp}
-                  style={{ display: 'flex', alignItems: 'center', gap: 16, background: '#fff', border: '1.5px dashed var(--border)', borderRadius: 16, padding: '32px 28px', color: 'var(--muted)' }}
+                  style={{ display: 'flex', alignItems: 'center', gap: 16, background: '#fff', border: '1.5px dashed var(--border)', borderRadius: 4, padding: '32px 28px', color: 'var(--muted)' }}
                 >
-                  <div style={{ width: 46, height: 46, borderRadius: 13, background: `${s.color}10`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <div style={{ width: 46, height: 46, borderRadius: 3, background: `${s.color}10`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                     <IconInbox size={22} color={s.color} />
                   </div>
                   <div>
@@ -268,7 +261,7 @@ export default function Kataloglar() {
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
             <motion.div initial="hidden" whileInView="show" viewport={{ once: true, margin: '-60px' }} variants={stagger} style={{ marginBottom: 44 }}>
               <motion.div variants={fadeUp} style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
-                <div style={{ width: 40, height: 40, borderRadius: 11, background: 'rgba(122,122,122,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{ width: 40, height: 40, borderRadius: 3, background: 'rgba(122,122,122,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <IconFiles size={19} color="var(--muted)" />
                 </div>
                 <span style={{ fontSize: 10.5, fontWeight: 800, letterSpacing: '3px', color: 'var(--muted)', textTransform: 'uppercase' }}>Genel Kataloglar</span>

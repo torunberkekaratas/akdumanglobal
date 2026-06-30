@@ -139,20 +139,18 @@ function Panel({ sector, isHovered, onHover, onLeave, index }) {
           transition={{ duration: 0.25, delay: 0.05 }}
           style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}
         >
-          {sector.tags.map((tag) => (
+          {sector.tags.map((tag, i) => (
             <span
               key={tag}
               style={{
                 fontSize: 10,
-                fontWeight: 600,
-                letterSpacing: '0.5px',
-                padding: '3px 9px',
-                borderRadius: 20,
-                background: sector.accent,
-                color: '#fff',
+                fontWeight: 500,
+                letterSpacing: '1.2px',
+                color: 'rgba(255,255,255,0.65)',
                 textTransform: 'uppercase',
               }}
             >
+              {i > 0 && <span style={{ margin: '0 6px', opacity: 0.4 }}>·</span>}
               {tag}
             </span>
           ))}

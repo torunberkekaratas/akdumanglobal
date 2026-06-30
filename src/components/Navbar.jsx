@@ -136,26 +136,20 @@ export default function Navbar() {
         <button
           onClick={handleContact}
           style={{
-            background: '#0a192f',
-            border: '1.5px solid #0a192f',
+            background: 'var(--dark)',
+            border: '1px solid var(--dark)',
             color: '#fff',
             fontSize: 13,
             fontWeight: 500,
             letterSpacing: '0.5px',
             padding: '8px 20px',
-            borderRadius: 6,
+            borderRadius: 3,
             cursor: 'pointer',
             fontFamily: 'inherit',
             transition: 'background 0.2s, color 0.2s, border-color 0.2s',
           }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.background = '#8b0000'
-            e.currentTarget.style.borderColor = '#8b0000'
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.background = '#0a192f'
-            e.currentTarget.style.borderColor = '#0a192f'
-          }}
+          onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.82' }}
+          onMouseLeave={(e) => { e.currentTarget.style.opacity = '1' }}
         >
           Teklif Al
         </button>
