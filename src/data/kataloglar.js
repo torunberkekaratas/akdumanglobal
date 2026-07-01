@@ -1,16 +1,40 @@
 /* ─── Katalog Listesi ───────────────────────────────────────
    PDF dosyaları public/katalog/ klasörüne eklenir.
    sector: 'sigorta' | 'gida' | 'temizlik' | null (henüz atanmadı)
-   PDF'ler yüklendikçe title/desc/sector alanları gerçek içerikle güncellenir.
 ──────────────────────────────────────────────────────────── */
 
 export const kataloglar = [
   {
     id: 1,
-    title: 'WIEBERR Endüstriyel Temizlik & Bakım Kimyasalları',
+    title: 'TCDD Özel Ürün Kataloğu',
     sector: 'temizlik',
-    desc: 'TCDD için özel hazırlanmış genel temizlik, yağ sökücü, koku giderici, motor/metal bakım kimyasalları ve oto boya & macun sistemleri kataloğu.',
-    file: '/katalog/wieberr-tcdd-katalogu.pdf',
+    desc: 'Türkiye Cumhuriyeti Devlet Demiryolları için özel olarak hazırlanmış WIEBERR bakım & temizlik kimyasalları kataloğu.',
+    file: '/katalog/akduman-tcdd-katalogu-tr.pdf',
+    cover: '/katalog/akduman-tcdd-katalogu-tr.png',
+  },
+  {
+    id: 3,
+    title: 'Yüzey Hazırlık ve Endüstriyel Kimyasallar (Türkçe)',
+    sector: 'temizlik',
+    desc: 'Otomotiv, bakım, yüzey hazırlık ve endüstriyel uygulamalar için WIEBERR profesyonel ürün kataloğu — Türkçe.',
+    file: '/katalog/akduman-yuzey-hazirlik-tr.pdf',
+    cover: '/katalog/akduman-yuzey-hazirlik-tr.png',
+  },
+  {
+    id: 10,
+    title: 'Surface Preparation and Industrial Chemicals (English)',
+    sector: 'temizlik',
+    desc: 'Professional solutions for automotive, maintenance, surface preparation and industrial applications — WIEBERR product catalogue in English.',
+    file: '/katalog/akduman-yuzey-hazirlik-en.pdf',
+    cover: '/katalog/akduman-yuzey-hazirlik-en.png',
+  },
+  {
+    id: 9,
+    title: 'Temizlik ve Hijyen Ürünleri Kataloğu',
+    sector: 'temizlik',
+    desc: 'Kağıt ürünleri, çöp poşeti & kovaları, metal ekipmanlar ve çöp konteynerleri için ACR profesyonel çözümler kataloğu.',
+    file: '/katalog/akduman-temizlik-hijyen-tr.pdf',
+    cover: '/katalog/akduman-temizlik-hijyen-tr.png',
   },
   {
     id: 2,
@@ -18,13 +42,6 @@ export const kataloglar = [
     sector: 'temizlik',
     desc: 'Zırhlı araç, silah sistemi ve taktik ekipmanlar için zift sökücü, enjektör/metal/motor temizleyici, silah temizleyici, WR-50 ve daha fazlası.',
     file: '/katalog/wieberr-savunma-sanayi-katalogu.pdf',
-  },
-  {
-    id: 3,
-    title: 'WIEBERR Yüzey Hazırlık & Boya Sistemleri Kimyasalları',
-    sector: 'temizlik',
-    desc: 'Macun, sertleştirici, astar, vernik, darbe koruyucu pütür ve kaynak çapak önleyici gibi oto boya & yüzey hazırlık kimyasalları (TR-ENG).',
-    file: '/katalog/wieberr-yuzey-hazirlik-kimyasallari-katalogu.pdf',
   },
   {
     id: 4,
@@ -62,13 +79,6 @@ export const kataloglar = [
     desc: 'Full product range including dairy, legumes, deli meats, spices, olives & olive oil — with brand visuals and item references.',
     file: '/katalog/renpey-product-catalogue-en.pdf',
     cover: '/katalog/renpey-product-catalogue-en.png',
-  },
-  {
-    id: 9,
-    title: 'ACR Temizlik Sarf Malzeme Kataloğu',
-    sector: 'temizlik',
-    desc: 'Kağıt grubu, çöp poşeti & kovası, mop/paspas/bez, temizlik aparatları ve plastik/metal krom dispenser & el kurutma cihazları kataloğu.',
-    file: '/katalog/acr-temizlik-urun-tanitim-katalogu.pdf',
   },
 ]
 
