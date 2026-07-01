@@ -50,34 +50,54 @@ function CatalogCard({ k, color }) {
         transition: 'box-shadow 0.25s, transform 0.25s, border-color 0.25s',
       }}
     >
-      <div style={{ height: 3, background: hov ? color : 'var(--border)', transition: 'background 0.25s' }} />
-      <div style={{ padding: '24px 24px 20px', display: 'flex', gap: 16, flex: 1 }}>
-        <IconFileTypePdf size={22} color={color} strokeWidth={1.5} style={{ flexShrink: 0, marginTop: 2 }} />
+      {/* Kapak fotoğrafı — varsa göster */}
+      {k.cover ? (
+        <div style={{ position: 'relative', height: 180, overflow: 'hidden', background: '#f0f0f0' }}>
+          <img
+            src={k.cover}
+            alt={k.title}
+            loading="lazy"
+            style={{
+              width: '100%', height: '100%', objectFit: 'cover',
+              transform: hov ? 'scale(1.04)' : 'scale(1)',
+              transition: 'transform 0.4s ease',
+            }}
+          />
+          <div style={{
+            position: 'absolute', inset: 0,
+            background: 'linear-gradient(to top, rgba(0,0,0,0.35) 0%, transparent 55%)',
+          }} />
+        </div>
+      ) : (
+        <div style={{ height: 3, background: hov ? color : 'var(--border)', transition: 'background 0.25s' }} />
+      )}
+
+      <div style={{ padding: '20px 24px 16px', display: 'flex', gap: 14, flex: 1 }}>
+        <IconFileTypePdf size={20} color={color} strokeWidth={1.5} style={{ flexShrink: 0, marginTop: 2 }} />
         <div style={{ flex: 1, minWidth: 0 }}>
-          <div style={{ fontSize: 15, fontWeight: 800, color: 'var(--dark)', lineHeight: 1.32, marginBottom: 6, letterSpacing: '-0.2px' }}>
+          <div style={{ fontSize: 15, fontWeight: 700, color: 'var(--dark)', lineHeight: 1.32, marginBottom: 6, letterSpacing: '-0.2px' }}>
             {k.title}
           </div>
           <div style={{ fontSize: 12.5, color: 'var(--muted)', lineHeight: 1.6 }}>{k.desc}</div>
         </div>
       </div>
+
       <div style={{
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-        padding: '14px 24px', borderTop: '1px solid var(--border)',
+        padding: '12px 24px', borderTop: '1px solid var(--border)',
         background: hov ? `${color}08` : 'transparent', transition: 'background 0.25s',
       }}>
-        <span style={{ fontSize: 10.5, fontWeight: 800, letterSpacing: '1.5px', color: 'var(--muted)', textTransform: 'uppercase' }}>
+        <span style={{ fontSize: 10.5, fontWeight: 600, letterSpacing: '1.5px', color: 'var(--muted)', textTransform: 'uppercase' }}>
           PDF Kataloğu
         </span>
-        <div style={{
-          display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, fontWeight: 800, color,
-        }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, fontWeight: 700, color }}>
           İndir
           <div style={{
-            width: 28, height: 28, borderRadius: 8,
+            width: 26, height: 26, borderRadius: 3,
             background: hov ? color : `${color}14`, display: 'flex', alignItems: 'center', justifyContent: 'center',
             transition: 'background 0.25s',
           }}>
-            <IconDownload size={14} color={hov ? '#fff' : color} />
+            <IconDownload size={13} color={hov ? '#fff' : color} />
           </div>
         </div>
       </div>
