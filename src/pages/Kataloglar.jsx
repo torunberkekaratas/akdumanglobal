@@ -52,21 +52,18 @@ function CatalogCard({ k, color }) {
     >
       {/* Kapak fotoğrafı — varsa göster */}
       {k.cover ? (
-        <div style={{ position: 'relative', height: 180, overflow: 'hidden', background: '#f0f0f0' }}>
+        <div style={{ height: 380, borderBottom: '1px solid var(--border)', background: '#f5f5f0', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <img
             src={k.cover}
             alt={k.title}
             loading="lazy"
             style={{
-              width: '100%', height: '100%', objectFit: 'cover',
-              transform: hov ? 'scale(1.04)' : 'scale(1)',
+              width: 'auto', height: '100%', maxWidth: '100%',
+              display: 'block', objectFit: 'contain',
+              transform: hov ? 'scale(1.03)' : 'scale(1)',
               transition: 'transform 0.4s ease',
             }}
           />
-          <div style={{
-            position: 'absolute', inset: 0,
-            background: 'linear-gradient(to top, rgba(0,0,0,0.35) 0%, transparent 55%)',
-          }} />
         </div>
       ) : (
         <div style={{ height: 3, background: hov ? color : 'var(--border)', transition: 'background 0.25s' }} />
