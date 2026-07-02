@@ -55,10 +55,11 @@ export const kataloglar = [
   },
   {
     id: 4,
-    title: 'ENKOCH Profesyonel Araç Bakım Ürünleri',
+    title: 'ENKOCH Profesyonel Araç Bakım Ürünleri Kataloğu',
     sector: 'temizlik',
-    desc: 'Susuz motor temizleyici, köpük temizleyici, lastik & kokpit parlatıcı, plastik yenileyici ve oto yüzey hazırlık serisi (TR-ENG).',
-    file: '/katalog/enkoch-urun-katalogu.pdf',
+    desc: 'Aracınızın değerini koruyan ENKOCH serisi — susuz motor temizleyici, lastik & kokpit parlatıcı, plastik yenileyici, vernik, astar ve daha fazlası.',
+    file: '/katalog/akduman-arac-bakim-katalogu-tr.pdf',
+    cover: '/katalog/akduman-arac-bakim-katalogu-tr.png',
   },
   {
     id: 5,
