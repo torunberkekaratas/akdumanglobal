@@ -4,6 +4,7 @@
 ──────────────────────────────────────────────────────────── */
 
 export const kataloglar = [
+  // ── Temizlik & Endüstriyel ────────────────────────────
   {
     id: 1,
     title: 'TCDD Özel Ürün Kataloğu',
@@ -37,13 +38,6 @@ export const kataloglar = [
     cover: '/katalog/akduman-temizlik-hijyen-tr.png',
   },
   {
-    id: 2,
-    title: 'WIEBERR Savunma Sanayi Bakım Kimyasalları',
-    sector: 'temizlik',
-    desc: 'Zırhlı araç, silah sistemi ve taktik ekipmanlar için zift sökücü, enjektör/metal/motor temizleyici, silah temizleyici, WR-50 ve daha fazlası.',
-    file: '/katalog/wieberr-savunma-sanayi-katalogu.pdf',
-  },
-  {
     id: 4,
     title: 'ENKOCH Profesyonel Araç Bakım Ürünleri',
     sector: 'temizlik',
@@ -64,6 +58,34 @@ export const kataloglar = [
     desc: 'Ev ve işyerleri için Magic Powder leke çıkarıcı, genel temizlik (T.E.T.), leke sökücü, yağ çözücü ve ortam kokuları kataloğu.',
     file: '/katalog/wunschome-katalogu.pdf',
   },
+
+  // ── Savunma Sanayi ─────────────────────────────────────
+  {
+    id: 2,
+    title: 'Savunma Sanayii Özel Ürün Kataloğu',
+    sector: 'temizlik',
+    desc: 'Zırhlı araç, hava platformu ve deniz sistemleri için savunma sanayiine özel olarak üretilmiş profesyonel kimyasal çözümler.',
+    file: '/katalog/akduman-savunma-sanayii-katalogu-tr.pdf',
+    cover: '/katalog/akduman-savunma-sanayii-katalogu-tr.png',
+  },
+  {
+    id: 11,
+    title: 'Jandarma Genel Komutanlığı Özel Kataloğu',
+    sector: 'temizlik',
+    desc: 'T.C. Jandarma Genel Komutanlığı için özel hazırlanmış — zırhlı araç, helikopter ve saha ekipmanı bakımına yönelik kimyasal çözümler.',
+    file: '/katalog/akduman-jandarma-katalogu-tr.pdf',
+    cover: '/katalog/akduman-jandarma-katalogu-tr.png',
+  },
+  {
+    id: 12,
+    title: 'Millî Savunma Bakanlığı Özel Kataloğu',
+    sector: 'temizlik',
+    desc: 'T.C. Millî Savunma Bakanlığı için özel olarak üretilmiş kara, hava ve deniz platformlarına yönelik profesyonel kimyasal çözümler kataloğu.',
+    file: '/katalog/akduman-msb-katalogu-tr.pdf',
+    cover: '/katalog/akduman-msb-katalogu-tr.png',
+  },
+
+  // ── Gıda & Bakliyat ────────────────────────────────────
   {
     id: 7,
     title: 'Renpey Gıda Ürün Kataloğu (Türkçe)',
