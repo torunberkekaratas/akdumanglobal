@@ -38,6 +38,14 @@ export const kataloglar = [
     cover: '/katalog/akduman-temizlik-hijyen-tr.png',
   },
   {
+    id: 14,
+    title: 'Endüstriyel ve Kurumsal Temizlik Çözümleri',
+    sector: 'temizlik',
+    desc: 'Yeni nesil temizlik teknolojisi — endüstriyel ve kurumsal kullanıma yönelik profesyonel temizlik ürünleri kataloğu.',
+    file: '/katalog/akduman-endustriyel-kurumsal-temizlik-tr.pdf',
+    cover: '/katalog/akduman-endustriyel-kurumsal-temizlik-tr.png',
+  },
+  {
     id: 13,
     title: 'Profesyonel Temizlik Ürünleri Kataloğu',
     sector: 'temizlik',
