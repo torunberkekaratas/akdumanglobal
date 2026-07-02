@@ -38,6 +38,14 @@ export const kataloglar = [
     cover: '/katalog/akduman-temizlik-hijyen-tr.png',
   },
   {
+    id: 13,
+    title: 'Profesyonel Temizlik Ürünleri Kataloğu',
+    sector: 'temizlik',
+    desc: 'Endüstriyel, kurumsal ve günlük temizlik çözümleri — yüksek performanslı, güvenli içerikli ve çevreye duyarlı ürün serisi.',
+    file: '/katalog/akduman-profesyonel-temizlik-tr.pdf',
+    cover: '/katalog/akduman-profesyonel-temizlik-tr.png',
+  },
+  {
     id: 4,
     title: 'ENKOCH Profesyonel Araç Bakım Ürünleri',
     sector: 'temizlik',
